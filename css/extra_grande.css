@@ -1,0 +1,49 @@
+body{
+    background-color: #120F26;
+}
+
+.container{
+    display: flex;
+}
+
+.form-cadastro{
+
+    margin-left: 50px;
+    height: 400px;
+    width: 800px;
+    background-color: #27498C;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.cadastro-container{
+
+    flex: 1;
+}
+
+.cadastro-container h1{
+    margin-left: 50px;
+    margin-bottom: 5px;
+    font-size: 2em;
+    color: white;
+}
+
+.cadastro-container h6{
+    font-size: 0.8em;
+    margin-left: 50px;
+    color: red;
+}
+
+.anuncios-container{
+    background-color: green;
+    height: 500px;
+    width: 500px;
+    display: block;
+    text-align: center;
+}
+
+.anuncios-container img{
+    display: block;
+    margin: 10px auto;
+}

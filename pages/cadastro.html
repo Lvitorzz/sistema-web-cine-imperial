@@ -17,19 +17,24 @@
     <header>
 
     </header>
-    <section>
-        <h1>Preencha seus dados principais</h1>
-        <h6>Todos os campos com (*) são obrigatorios</h6>
-        <div class="form">
-            <form action="POST">
-                <label for="Nome">Nome completo: </label>
-                <input type="text">
-                <label for="Nome">Como gostaria de ser chamado?</label>
-                <input type="text">
-                <label for="Nome"></label>
-                <input type="text">
-            </form>
-        </div>
-    </section>
+
+    <div class="container">
+        <section class="cadastro-container">
+            <h1>Preencha seus dados principais</h1>
+            <h6>Todos os campos com (*) são obrigatorios</h6>
+            <div class="form-cadastro">
+                <form action="#">
+                    <input type="text" class="form-nome" name="nome" required>
+                    <label for="nome">Nome completo: </label>            
+                </form>
+            </div>    
+        </section>
+
+        <section class="anuncios-container">
+            <img src="../imgs/sua-empresa-em-cartaz.png" alt="sua empresa em cartaz">
+            <img src="../imgs/aniversario-de-cinema.png" alt="aniversario de cinema">
+            <img src="../imgs/aluguel-de-sala.png" alt="aluguel de sala">
+        </section>
+    </div>
 </body>
 </html>
