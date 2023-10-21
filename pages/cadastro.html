@@ -24,17 +24,60 @@
             <h6>Todos os campos com (*) são obrigatorios</h6>
             <div class="form-cadastro">
                 <form action="#">
-                    <input type="text" class="form-nome" name="nome" required>
-                    <label for="nome">Nome completo: </label>            
+                    <div class="input-container">
+                        <div class="input-box">
+                            <label for="nome">Nome completo: </label>
+                            <input type="text" class="form-nome" name="nome" placeholder="Digite seu nome completo" required> 
+                        </div>
+                        <div class="input-box">
+                            <label for="apelido">Como gostaria de ser chamado: </label>
+                            <input type="text" class="form-apelido" name="apelido" placeholder="Digite o nome que gostaria de ser chamado">
+                        </div>
+                        <div class="input-box">
+                            <label for="email">Seu email: </label>
+                            <input type="email" class="form-email" name="email" placeholder="Digite seu email" required> 
+                        </div>
+                        <div class="input-box">
+                            <label for="cpf">Seu CPF: </label>
+                            <input type="text" class="form-cpf" name="cpf" oninput="formatarCPF()" maxlength="14" placeholder="Digite seu CPF" required> 
+                        </div>
+                        <div class="input-box">
+                            <label for="telefone">Seu telefone: </label>
+                            <input type="text" class="form-telefone" name="telefone" oninput="formatarTelefone()" maxlength="15" placeholder="Digite o numero do seu telefone" required> 
+                        </div>
+                        <div class="input-box">
+                            <label for="senha">Crie uma senha: </label>
+                            <input type="password" class="form-senha" name="senha" placeholder="Defina uma senha" required> 
+                        </div>
+                        <div class="input-box">
+                            <label for="senha2">Repita sua senha: </label>
+                            <input type="password" class="form-senha2" name="senha2" placeholder="Repita sua senha" required> 
+                        </div>
+                    </div> 
+
+                    <div class="btn-registrar">
+                        <button>Registrar-se</button>
+                    </div> 
+                    
                 </form>
-            </div>    
+            </div>
         </section>
 
         <section class="anuncios-container">
-            <img src="../imgs/sua-empresa-em-cartaz.png" alt="sua empresa em cartaz">
-            <img src="../imgs/aniversario-de-cinema.png" alt="aniversario de cinema">
-            <img src="../imgs/aluguel-de-sala.png" alt="aluguel de sala">
+            <a href="index.html">
+                <img src="../imgs/sua-empresa-em-cartaz.png" alt="sua empresa em cartaz">
+            </a>
+
+            <a href="">
+                <img src="../imgs/aniversario-de-cinema.png" alt="aniversario de cinema">
+            </a>
+
+            <a href="">
+                <img src="../imgs/aluguel-de-sala.png" alt="aluguel de sala">
+            </a>
         </section>
     </div>
+
+    <script src="../scripts/cadastro.js"></script>
 </body>
 </html>

@@ -2,15 +2,18 @@ body{
     background-color: #120F26;
 }
 
+header{
+    background-color: red;
+    height: 80px;
+}
+
 .container{
     display: flex;
 }
 
 .form-cadastro{
-
-    margin-left: 50px;
     height: 400px;
-    width: 800px;
+    width: 700px;
     background-color: #27498C;
     border-radius: 25px;
     display: flex;
@@ -18,12 +21,12 @@ body{
 }
 
 .cadastro-container{
-
+    margin-left: 90px;
+    margin-top: 25px;
     flex: 1;
 }
 
 .cadastro-container h1{
-    margin-left: 50px;
     margin-bottom: 5px;
     font-size: 2em;
     color: white;
@@ -31,12 +34,92 @@ body{
 
 .cadastro-container h6{
     font-size: 0.8em;
-    margin-left: 50px;
     color: red;
 }
 
+.input-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.input-box{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+    margin: auto;
+}
+
+.input-box input{
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.input-box input:hover{
+    background-color: #eaeaea;
+}
+
+.input-box input:focus-visible{
+    outline: 1px solid #120F26;
+}
+
+.input-box label{
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-bottom: -5px;
+    color: white;
+    
+}
+
+.input-box input::placeholder{
+    color: #000000be;
+    font-weight: 400;
+}
+
+.input-box .form-nome{
+    width: 620px;
+}
+
+.input-box .form-apelido,
+.form-email,
+.form-cpf,
+.form-telefone,
+.form-senha,
+.form-senha2{
+    width: 270px;
+}
+
+.btn-registrar{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-registrar button{
+    width: 300px;
+    height: 50px;
+    border: 1px solid #4945F9;
+    border-radius: 10px;
+    background-color: #120F26;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    box-shadow: 1px 1px 6px #120F26;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn-registrar button:hover{
+    background-color: #080611;
+    transform: translateY(-2px);
+
+}
+
 .anuncios-container{
-    background-color: green;
+    margin-top: 20px;
     height: 500px;
     width: 500px;
     display: block;
@@ -44,6 +127,14 @@ body{
 }
 
 .anuncios-container img{
-    display: block;
-    margin: 10px auto;
+    margin-top: 20px;
+    width: 274px;
+    height: 151px;
+    transition: transform 0.3s;
+    display: inline-block;
+}
+
+
+.anuncios-container img:hover{
+    transform: translateY(-5px);
 }
