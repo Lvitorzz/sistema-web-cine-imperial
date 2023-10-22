@@ -12,7 +12,7 @@ header{
 }
 
 .form-cadastro{
-    height: 400px;
+    height: 410px;
     width: 700px;
     background-color: #27498C;
     border-radius: 25px;
@@ -116,6 +116,18 @@ header{
     background-color: #080611;
     transform: translateY(-2px);
 
+}
+
+.form-cadastro h5{
+    color: white;
+    font-weight: 100;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.7em;
+}
+
+.form-cadastro h5 a{
+    color: white;
 }
 
 .anuncios-container{

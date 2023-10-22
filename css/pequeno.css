@@ -1,0 +1,156 @@
+body{
+    background-color: #120F26;
+}
+
+header{
+    background-color: brown;
+    height: 80px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-cadastro{
+    height: 535px;
+    width: 450px;
+    background-color: #27498C;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.cadastro-container{
+    margin-top: 20px;
+}
+
+.cadastro-container h1{
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    color: white;
+}
+
+.cadastro-container h6{
+    font-size: 0.5em;
+    color: red;
+}
+
+.input-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0.7rem 0;
+}
+
+.input-box{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    margin: auto;
+}
+
+.input-box input{
+    margin: 0.6rem 0;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.input-box input:hover{
+    background-color: #eaeaea;
+}
+
+.input-box input:focus-visible{
+    outline: 1px solid #120F26;
+}
+
+.input-box label{
+    font-size: 0.6em;
+    font-weight: 500;
+    margin-bottom: -5px;
+    color: white;
+    
+}
+
+.input-box input::placeholder{
+    color: #000000be;
+    font-weight: 400;
+}
+
+.input-box .form-nome{
+    width: 320px;
+}
+
+.input-box .form-apelido,
+.form-email,
+.form-cpf,
+.form-telefone,
+.form-senha,
+.form-senha2{
+    width: 320px;
+    font-size: 0.6em;
+}
+
+.btn-registrar{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-registrar button{
+    width: 200px;
+    height: 40px;
+    border: 1px solid #4945F9;
+    border-radius: 10px;
+    background-color: #120F26;
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    box-shadow: 1px 1px 6px #120F26;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn-registrar button:hover{
+    background-color: #080611;
+    transform: translateY(-2px);
+
+}
+
+.form-cadastro h5{
+    color: white;
+    font-weight: 100;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.6em;
+}
+
+.form-cadastro h5 a{
+    color: white;
+}
+
+.anuncios-container {
+    margin-top: 80px;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.anuncios-container img {
+    display: block;
+    margin-top: 25px;
+    width: 314px;
+    height: 191px;
+    transition: transform 0.3s;
+}
+
+
+.anuncios-container img:hover{
+    transform: translateY(-5px);
+}
