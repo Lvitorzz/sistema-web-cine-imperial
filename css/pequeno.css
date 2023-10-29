@@ -7,7 +7,7 @@ header{
     height: 80px;
 }
 
-.container{
+.container-telaCadastro{
     display: flex;
     flex-direction: column;
     justify-content: center;
