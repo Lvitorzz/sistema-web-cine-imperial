@@ -153,13 +153,18 @@ header{
 
 /*=-=-=-==-=--=-==-CSS TELA DE ESCOLHER HORARIO-=-=-=-=-==-=-=-=--*/
 
+.container-data-horario hr{
+    margin-top: 50px;
+    border: 1px solid black;
+}
+
 .container-data-horario {
     display: flex;
 }
   
 .container-data-horario .filme {
     flex: 40%;
-    border: 1px solid black;
+
     height: 100vh;
     color: white;
 }
@@ -172,7 +177,7 @@ header{
   
 .container-data-horario .data-horario {
     flex: 60%;
-    border: 1px solid black;
+
     height: 100vh;
     color: white;
 }
