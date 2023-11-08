@@ -110,7 +110,7 @@ function dataSelecionada(botao, dia) {
   });
 }
 
-const filme = "The dark knight"
+const filme = "the stuff"
 async function getMovieInfo(filme) {
 
   const response = await fetch(
