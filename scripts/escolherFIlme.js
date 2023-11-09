@@ -84,6 +84,7 @@ function dataSelecionada(botao, dia) {
   horariosSala1LegendadoDoDia.forEach((horario) => {
     const horarioBotao = document.createElement("button");
     horarioBotao.classList.add("horario-btn");
+    horarioBotao.id = `sala1-Legendado`;
     horarioBotao.textContent = horario;
     sala1LegendadoContainer.appendChild(horarioBotao);
   });
@@ -91,6 +92,7 @@ function dataSelecionada(botao, dia) {
   horariosSala1DubladoDoDia.forEach((horario) => {
     const horarioBotao = document.createElement("button");
     horarioBotao.classList.add("horario-btn");
+    horarioBotao.id = `sala1-Dublado`;
     horarioBotao.textContent = horario;
     sala1DubladoContainer.appendChild(horarioBotao);
   });
@@ -98,6 +100,7 @@ function dataSelecionada(botao, dia) {
   horariosSala2LegendadoDoDia.forEach((horario) => {
     const horarioBotao = document.createElement("button");
     horarioBotao.classList.add("horario-btn");
+    horarioBotao.id = `sala2-Legendado`;
     horarioBotao.textContent = horario;
     sala2LegendadoContainer.appendChild(horarioBotao);
   });
@@ -105,14 +108,18 @@ function dataSelecionada(botao, dia) {
   horariosSala2DubladoDoDia.forEach((horario) => {
     const horarioBotao = document.createElement("button");
     horarioBotao.classList.add("horario-btn");
+    horarioBotao.id = `sala2-Dublado`;
     horarioBotao.textContent = horario;
     sala2DubladoContainer.appendChild(horarioBotao);
   });
+
+  escolherHorario();
 }
 
-const filme = "the stuff"
+let filme = "fast and furious";
+let nomeFilme = '';
 async function getMovieInfo(filme) {
-
+  
   const response = await fetch(
     `http://www.omdbapi.com/?t=${filme}&apikey=e182b070`
   );
@@ -133,6 +140,8 @@ async function getMovieInfo(filme) {
             <h2><strong>Avaliação:</strong> ${data.imdbRating}</h2>          
         `
   );
+
+  nomeFilme = data.Title;
 }
 getMovieInfo(filme);
 
@@ -154,3 +163,29 @@ document.addEventListener("DOMContentLoaded", function () {
     src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`;
   }
 });
+
+function escolherHorario() {
+  const horarioBotoes = document.querySelectorAll('.horario-btn');
+  const diaSelecionado = botaoSelecionado.textContent.split('\n')[0];
+
+  horarioBotoes.forEach((horarioBotao) => {
+    horarioBotao.addEventListener('click', function() {
+      const dia = diaSelecionado;
+      const info = horarioBotao.id;
+      const splitInfo = info.split('-');
+      const salaNumero = splitInfo[0].substring(4);
+      const salaEscolhida = `Sala ${salaNumero}`;
+      const audioEscolhido = splitInfo[1];
+      const horario = horarioBotao.textContent;
+
+      localStorage.setItem('sala', salaEscolhida);
+      localStorage.setItem('tipoAudio', audioEscolhido);
+      localStorage.setItem('filme', nomeFilme);
+      localStorage.setItem('dia', dia);
+      localStorage.setItem('horario', horario);
+
+      window.location.href = 'escolherIngresso.html';
+    });
+  });
+}
+
