@@ -116,7 +116,7 @@ function dataSelecionada(botao, dia) {
   escolherHorario();
 }
 
-let filme = "fast and furious";
+let filme = "the batman";
 let nomeFilme = '';
 async function getMovieInfo(filme) {
   

@@ -4,16 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escolher Ingresso</title>
+    <link rel="stylesheet" href="../css/padrao.css">
+    <link rel="stylesheet" media="screen and (max-width: 575px)" href="../css/extra_pequeno.css" href="../css/extra_pequeno.css">
+    <link rel="stylesheet" media="screen and (min-width: 576px) and (max-width: 767px)" href="../css/pequeno.css" href="../css/pequeno.css">
+    <link rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)" href="../css/medio.css" href="../css/medio.css">
+    <link rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)" href="../css/grande.css" href="../css/grande.css">
+    <link rel="stylesheet" media="screen and (min-width: 1200px)" href="../css/extra_grande.css" href="../css/extra_grande.css">
 </head>
 <body>
-    <div id="detalhes-ingresso">
-        <h2 id="filme-nome"></h2>
-        <p id="dia-escolhido"> </p>
-        <p id="horario-escolhido"></p>
-        <p id="sala-escolhida"></p>
-        <p id="audio-escolhido"></p>
-    </div>
+    <section class="escolher-ingressos">
+        <div class="texto-escolher-ingresso">
+            <h1>ESCOLHER INGRESSOS</h1>
+        </div>
+        <div class="fase">
+            1 2 3 4 5
+        </div>
+    </section>
+    <section class="escolher-ingressos-info-filme">
+        <div class="escolher-ingressos-poster-filme" id="poster">
 
-    <script src="ingressos.js"></script>
+        </div>
+        <div class="escolher-detalhes-ingresso">
+            <h2 id="filme-nome"></h2>
+            <p id="dia-escolhido"> </p>
+            <p id="horario-escolhido"></p>
+            <p id="sala-escolhida"></p>
+            <p id="audio-escolhido"></p>
+        </div>
+        <hr>
+        <div class="escolher-ingressos-endereco">
+            <div>
+                <h2>CinemaPenas - Catu/BA</h2>
+                <h3>R. Barão de Camaçari, 118 - Centro</h3>
+            </div>
+            <div class="escolher-ingresso-mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2203.1842076655075!2d-38.376427131987484!3d-12.357064274406161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1696791350248!5m2!1spt-BR!2sbr" width="250" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+    
+
+    <script src="/scripts/ingressos.js"></script>
 </body>
 </html>

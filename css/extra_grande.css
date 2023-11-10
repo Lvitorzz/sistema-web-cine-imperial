@@ -305,8 +305,71 @@ header{
 
 
   
+/*=-=-=-==-=--=-==-CSS TELA DE ESCOLHER HORARIO-=-=-=-=-==-=-=-=--*/
+
+.escolher-ingressos{
+    height: 120px;
+    background-color: #18213B;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 1px 2px 20px black;
+}
+
+.escolher-ingressos .texto-escolher-ingresso{
+    color: white;
+    font-size: 1.6em;
+    margin-top: 30px;
+    margin-left: 450px;
+}
+
+.fase{
+    background-color: red;
+    margin: auto;
+}
+
+.escolher-ingressos-info-filme{
+    background-color: white;
+    height: 200px;
+    width: 1000px;
+    display: flex;
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.escolher-ingressos-poster-filme img{
+    height: 180px;
+    width: 120px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 15px;
+}
   
-  
-  
-  
-  
+.escolher-detalhes-ingresso h2{
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.escolher-detalhes-ingresso p{
+    margin-left: 10px;
+    margin-bottom: 3px;
+}
+
+.escolher-ingressos-info-filme hr{
+    margin-left: 60px;
+    height: 180px;
+    margin-top: 10px;
+}
+
+.escolher-ingressos-endereco{
+    display: flex;
+}
+
+.escolher-ingressos-endereco iframe{
+    box-shadow: 1px 1px 5px black;
+    margin-top: 25px;
+    margin-left: 15px;
+    border-radius: 10px;
+}
