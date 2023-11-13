@@ -407,13 +407,12 @@ header{
     padding-top: 15px;
     padding-bottom: 15px;
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .container-img-servicos {
     width: 100%;
     height: 380px;
-    background-color: turquoise;
 }
 
 .container-img-servicos img {
@@ -421,6 +420,7 @@ header{
     height: 100%;
 }
 
+/* Estilo para o header fixado no topo */
 header {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     background: #2A3659;
@@ -429,12 +429,14 @@ header {
     top: 0;
     color: #fff;
     font-size: 18px;
+    z-index: 1000;
 }
 
-header, nav ul{
+/* Estilo para o header e a lista de navegação */
+header, nav ul {
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 0.9rem;
     list-style: none;
     padding-left: 35px;
 }
@@ -442,17 +444,161 @@ header, nav ul{
 nav ul li {
     margin-left: 1rem;
     padding: 0 30px;
+    position: relative;
 }
 
 header a {
     color: #fff;
     text-decoration: none;
+    position: relative;
+    font-weight: 500;
+}
+
+/* Efeito ao passar o mouse sobre os links */
+header a:hover {
+    color: #14FF00; /* Altera a cor ao passar o mouse */
+}
+
+/* Linha que aparece abaixo do link ao passar o mouse */
+header a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #14FF00; /* Cor da linha */
+    bottom: -2px; /* Posiciona a linha abaixo do link */
+    left: 0;
+    transform: scaleX(0); /* Inicialmente, a linha não é visível */
+    transform-origin: 0% 50%; /* Altera a origem para o lado esquerdo */
+    transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave para o efeito */
+}
+
+header a:hover::before {
+    transform: scaleX(1); /* Aumenta a largura da linha ao passar o mouse */
 }
 
 .container-informativo-1 {
+    padding-top: 60px;
+    display: flex; /* Ativa o modelo de layout flexível */
+}
+
+/* Estilo para a div da imagem */
+.image-container {
+    flex: 1; /* A imagem ocupará 1 parte do espaço disponível */
+    display: flex; /* Ativa o modelo de layout flexível na div da imagem */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+/* Estilo para a imagem dentro da div */
+.image-container img {
+    width: 600px; /* A imagem ocupará 100% da largura da div pai */
+    max-width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove espaço extra abaixo da imagem */
+}
+
+/* Estilo para a div do texto */
+.text-container {
+    flex: 1; /* O texto ocupará 1 parte do espaço disponível */
+    display: flex; /* Ativa o modelo de layout flexível na div do texto */
+    flex-direction: column; /* Alinha os itens em coluna */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: baseline;
+    padding: 20px; /* Adiciona algum espaçamento interno para melhor visualização */
+    box-sizing: border-box; /* Garante que o padding não aumente o tamanho total */
+    color: #fff;
+}
+
+/* Adiciona margin para os elementos dentro de .text-container */
+.text-container h2,
+.text-container p,
+.text-container button {
+    margin-bottom: 20px; /* Adiciona margem inferior */
+}
+
+.text-container h2 {
+    font-size: 40px;
+}
+
+.text-container button {
+    padding: 15px 35px;
+    background-color: #263238;
+    color: #14FF00;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: 550;
+    
+}
+
+.text-container p {
+    text-align: justify; /* Justifica o texto */
+    padding-right: 130px;
+}
+
+.container-informativo-1 {
+    padding-top: 60px;
     display: flex;
 }
 
-.container-informativo-1 img {
+/* Nova div para a imagem */
+.new-image-container {
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para a imagem dentro da nova div */
+.new-image-container img {
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Estilo para a div do texto */
+.text-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #fff;
+    padding-left: 60px;
+}
+
+/* Adiciona margin para os elementos dentro de .text-container */
+.text-container h2,
+.text-container p,
+.text-container button {
+    margin-bottom: 20px;
+}
+
+.text-container h2 {
+    font-size: 40px;
+}
+
+.text-container button {
+    padding: 15px 35px;
+    background-color: #263238;
+    color: #14FF00;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: 550;
+    transition: background-color 0.3s, transform 0.3s; /* Adiciona transições para a mudança de cor e escala */
+}
+
+.text-container button:hover {
+    background-color: #1a1a1a;
+    transform: scale(1.05); /* Adiciona uma escala ao passar o mouse */
+}
+
+.text-container p {
+    text-align: justify;
+    padding-right: 130px;
 }
