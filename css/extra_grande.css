@@ -330,47 +330,44 @@ header{
 
 .escolher-ingressos-info-filme{
     background-color: white;
-    height: 200px;
-    width: 1000px;
+    height: 550px;
+    width: 230px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     border-radius: 20px;
-    margin-top: 50px;
-    margin-left: 50px;
+    margin-top: 20px;
+    margin-left: 30px;
 }
 
 .escolher-ingressos-poster-filme img{
-    height: 180px;
-    width: 120px;
+    height: 220px;
+    width: 160px;
     margin-top: 10px;
-    margin-left: 10px;
     border-radius: 15px;
 }
   
 .escolher-detalhes-ingresso h2{
-    margin-left: 50px;
-    margin-top: 20px;
-    margin-bottom: 8px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
 }
 
 .escolher-detalhes-ingresso p{
-    margin-left: 10px;
-    margin-bottom: 3px;
-}
-
-.escolher-ingressos-info-filme hr{
-    margin-left: 60px;
-    height: 180px;
-    margin-top: 10px;
+    margin-bottom: 2px;
+    font-weight: bold;
+    font-size: 0.8em;
+    margin-left: -30px;
 }
 
 .escolher-ingressos-endereco{
-    display: flex;
+    display: block;
 }
 
 .escolher-ingressos-endereco iframe{
     box-shadow: 1px 1px 5px black;
     margin-top: 25px;
-    margin-left: 15px;
+    margin-left: 0px;
     border-radius: 10px;
 }
 

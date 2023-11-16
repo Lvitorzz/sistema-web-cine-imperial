@@ -54,7 +54,7 @@ for (let i = 0; i < 7; i++) {
 
   const botao = document.createElement("button");
   botao.classList.add("dia-btn");
-  botao.innerHTML = `<p>${dia}</p><p>${data}</p>`;
+  botao.innerHTML = `<p>${dia} </p><p>${data}</p>`;
 
   botao.addEventListener("click", function () {
     dataSelecionada(botao, dia);
@@ -174,7 +174,7 @@ function escolherHorario() {
       const info = horarioBotao.id;
       const splitInfo = info.split('-');
       const salaNumero = splitInfo[0].substring(4);
-      const salaEscolhida = `Sala ${salaNumero}`;
+      const salaEscolhida = `${salaNumero}`;
       const audioEscolhido = splitInfo[1];
       const horario = horarioBotao.textContent;
 
