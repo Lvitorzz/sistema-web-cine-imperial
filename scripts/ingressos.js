@@ -30,7 +30,7 @@ function diaCompleto(diaEscolhido) {
     'Qua': 'Quarta-feira',
     'Qui': 'Quinta-feira',
     'Sex': 'Sexta-feira',
-    'Sab': 'Sábado',
+    'Sáb': 'Sábado',
     'Dom': 'Domingo'
   };
 
@@ -57,3 +57,44 @@ diaEscolhidoElement.textContent = `Data: ${data} - ${nomeDia}`;
 horarioEscolhidoElement.textContent = `Horário: ${horarioEscolhido}`;
 salaEscolhidaElement.textContent = `Sala: 0${salaEscolhida}`;
 audioEscolhidoElement.textContent = `Sessão: ${audioEscolhido}`;
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  var quantidadeInputs = document.querySelectorAll('table tbody input[type="number"]');
+  quantidadeInputs.forEach(function (input) {
+      input.addEventListener('input', calcularTotais);
+  });
+});
+
+function calcularTotais() {
+  var linhas = document.querySelectorAll('table tbody tr');
+  var totalIngressos = 0;
+  var totalValor = 0;
+
+  linhas.forEach(function (linha, index) {
+      if (index < linhas.length) {
+          var quantidade = parseInt(linha.querySelector('select').value, 10);
+          var precoUnitario = parseFloat(linha.querySelector('td:nth-child(2)').textContent.replace('R$', '').replace(',', '.'));
+
+          if (index === 3) {
+              quantidade *= 4;
+              precoUnitario /= 4;
+          }
+          else if (index === 4) {
+              quantidade *= 2;
+              precoUnitario /= 2;
+          }
+
+          var subtotal = quantidade * precoUnitario;
+
+          linha.querySelector('td:nth-child(4)').textContent = 'R$' + subtotal.toFixed(2);
+
+          totalIngressos += quantidade;
+          totalValor += subtotal;
+      }
+  });
+
+  document.getElementById('quant-ingressos').textContent = totalIngressos;
+  document.getElementById('valor-pagar').textContent = 'R$' + totalValor.toFixed(2);
+}

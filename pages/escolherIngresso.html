@@ -21,28 +21,157 @@
         </div>
     </section>
 
-    <section class="escolher-ingressos-info-filme">
-        <div class="escolher-ingressos-poster-filme" id="poster">
-
-        </div>
-        <div class="escolher-detalhes-ingresso">
-            <h2 id="filme-nome"></h2>
-            <p id="dia-escolhido"> </p>
-            <p id="horario-escolhido"></p>
-            <p id="sala-escolhida"></p>
-            <p id="audio-escolhido"></p>
-        </div>
+    <div class="container-escolher-ingressos">
+        <section class="escolher-ingressos-info-filme">
+            <div class="escolher-ingressos-poster-filme" id="poster">
+    
+            </div>
+            <div class="escolher-detalhes-ingresso">
+                <h2 id="filme-nome"></h2>
+                <p id="dia-escolhido"> </p>
+                <p id="horario-escolhido"></p>
+                <p id="sala-escolhida"></p>
+                <p id="audio-escolhido"></p>
+            </div>
+            
+            <div class="escolher-ingressos-endereco">
+                <div class="escolher-ingressos-endereco-texto">
+                    <h2>CinemaPenas - Catu/BA</h2>
+                    <h3>R. Barão de Camaçari, 118 - Centro</h3>
+                </div>
+                <div class="escolher-ingresso-mapa">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2203.1842076655075!2d-38.376427131987484!3d-12.357064274406161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1696791350248!5m2!1spt-BR!2sbr" width="200" height="120" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    
+        <section class="container-tipo-ingresso">
+            <h1>Selecione o tipo e a quantidade de ingresso</h1>
         
-        <div class="escolher-ingressos-endereco">
-            <div>
-                <h2>CinemaPenas - Catu/BA</h2>
-                <h3>R. Barão de Camaçari, 118 - Centro</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ingresso</th>
+                        <th>Preço Unitário</th>
+                        <th>Quantidade</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ingresso Inteiro</td>
+                        <td>R$29,00</td>
+                        <td>
+                            <select onchange="calcularTotais()">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                        </td>
+                        <td>R$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Ingresso Meia</td>
+                        <td>R$14,50</td>
+                        <td>
+                            <select onchange="calcularTotais()">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                        </td>
+                        <td>R$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Ingresso Criança</td>
+                        <td>R$14,50</td>
+                        <td>
+                            <select onchange="calcularTotais()">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                        </td>
+                        <td>R$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Pacote Família
+                            <div class="tooltip">
+                                ?
+                                <div class="tooltip-text">Combo de 4 Ingressos por R$20,00 cada.</div>
+                            </div>
+                        </td>
+                        <td>R$60,00</td>
+                        <td>
+                            <select onchange="calcularTotais('pacoteFamilia')">
+                                <option value="0">0</option>
+                                <option value="1">1 Pacote (Total de de 4 Ingresso)</option>
+                                <option value="2">2 Pacotes (Total de 8 Ingresso)</option>
+                            </select>
+                        </td>
+                        <td>R$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Dupla Paga Meia
+                            <div class="tooltip-dupla">
+                                ?
+                                <div class="tooltip-text">2 Ingressos com preço de meia entrada cada.</div>
+                            </div>
+                        </td>
+                        <td>R$29.00</td>
+                        <td>
+                            <select onchange="calcularTotais('duplaPagaMeia')">
+                                <option value="0">0</option>
+                                <option value="1">1 (Total de 2 Ingressos)</option>
+                                <option value="2">2 (Total de 4 Ingressos)</option>
+                                <option value="3">3 (Total de 6 Ingressos)</option>
+                                <option value="4">4 (Total de 8 Ingressos)</option>
+                            </select>
+                        </td>
+                        <td>R$0.00</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="info-valores">
+                <div class="container-quant-ingressos">
+                    <h1 class="txt-quant">Total de Ingressos</h1>
+                    <h1 class="quant-ingressos" id="quant-ingressos">0</h1>
+                </div>
+                <div class="container-valor-pagar">
+                    <h1 class="txt-valor-pagar">Valor a Pagar</h1>
+                    <h1 class="valor-pagar" id="valor-pagar">R$0,00</h1>
+                </div>
             </div>
-            <div class="escolher-ingresso-mapa">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2203.1842076655075!2d-38.376427131987484!3d-12.357064274406161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1696791350248!5m2!1spt-BR!2sbr" width="230" height="110" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </section>
+            
+        </section>
+
+        <section class="container-confirma-ingresso">
+            
+        </section>
+    </div>
+    
     
 
     <script src="/scripts/ingressos.js"></script>

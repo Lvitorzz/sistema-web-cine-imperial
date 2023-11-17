@@ -328,10 +328,14 @@ header{
     margin: auto;
 }
 
+.container-escolher-ingressos{
+    display: flex;
+}
+
 .escolher-ingressos-info-filme{
-    background-color: white;
+    background-color: #27498C;
     height: 550px;
-    width: 230px;
+    width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -341,8 +345,8 @@ header{
 }
 
 .escolher-ingressos-poster-filme img{
-    height: 220px;
-    width: 160px;
+    height: 200px;
+    width: 140px;
     margin-top: 10px;
     border-radius: 15px;
 }
@@ -351,13 +355,16 @@ header{
     margin-top: 10px;
     margin-bottom: 5px;
     text-align: center;
+    color: white;
+    font-size: 1.7em;
 }
 
 .escolher-detalhes-ingresso p{
     margin-bottom: 2px;
     font-weight: bold;
-    font-size: 0.8em;
-    margin-left: -30px;
+    font-size: 0.9em;
+    color: white;
+    margin-left: 10px;
 }
 
 .escolher-ingressos-endereco{
@@ -366,10 +373,162 @@ header{
 
 .escolher-ingressos-endereco iframe{
     box-shadow: 1px 1px 5px black;
-    margin-top: 25px;
-    margin-left: 0px;
+    margin-left: 15px;
+    margin-top: 10px;
     border-radius: 10px;
 }
+
+.escolher-ingressos-endereco-texto h2{
+    font-size: 1.1em;
+    margin-top: 20px;
+    color: #1a1a1a;
+}
+
+.escolher-ingressos-endereco-texto h3{
+    font-size: 0.8em;
+    color: #120F26;
+}
+
+.container-tipo-ingresso{
+    margin-top: 20px;
+    height: 550px;
+    width: 700px;
+    border-radius: 20px;
+    margin-left: 50px;
+    background-color: white;
+    padding: 10px;
+}
+
+.container-tipo-ingresso h1{
+    color: #18213B;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.container-tipo-ingresso table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.container-tipo-ingresso th {
+    font-size: 1.1em;
+}
+
+.container-tipo-ingresso th, td{
+    border-bottom: 1px solid #080611;
+    padding: 10px;
+    text-align: left;
+    position: relative;
+}
+
+.tooltip-dupla {
+    position: absolute;
+    top: 35%;
+    right: 27px;
+    width: 20px;
+    height: 20px;
+    background-color: #120F26;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+    top: 35%;
+    right: 47px;
+    width: 20px;
+    height: 20px;
+    background-color: #120F26;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #120F26;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip-dupla:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.container-tipo-ingresso select{
+    padding: 10px;
+    width: 60px;
+    border-radius: 5px;
+    border: 1px solid #120F26;
+}
+
+.container-valor-pagar{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.container-valor-pagar .txt-valor-pagar{
+    margin-top: -10px;
+    margin-bottom: -10px;
+    font-size: 1em;
+    margin-right: 30px;
+}
+
+.valor-pagar{
+    margin-right: 40px;
+}
+
+.info-valores{
+    display: flex;
+    justify-content: end;
+}
+
+.container-quant-ingressos .txt-quant{
+    margin-top: -10px;
+    margin-bottom: -10px;
+    font-size: 1em;
+    margin-right: 50px;
+}
+
+.container-quant-ingressos .quant-ingressos{
+    margin-right: 60px;
+}
+
+.container-confirma-ingresso{
+    background-color: #27498C;
+    height: 550px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
 
 /* =-=-=-=-=-=-=-=- CSS TELA DE SERVIÇOS -=-=-=-=-=-=-=-=-=-=*/
 
