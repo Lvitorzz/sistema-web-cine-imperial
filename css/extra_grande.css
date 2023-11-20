@@ -529,6 +529,19 @@ header{
     margin-left: 50px;
 }
 
+.container-confirma-ingresso button{
+    height: 60px;
+    width: 250px;
+    border-radius: 10px;
+    border: none;
+    background-color: #15ff00;
+    color: white;
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: 40px;
+}
+
 
 /* =-=-=-=-=-=-=-=- CSS TELA DE SERVIÇOS -=-=-=-=-=-=-=-=-=-=*/
 
