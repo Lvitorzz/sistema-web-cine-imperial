@@ -71,29 +71,40 @@ function calcularTotais() {
   var linhas = document.querySelectorAll('table tbody tr');
   var totalIngressos = 0;
   var totalValor = 0;
+  var detalhesCompra = ''; // Variável para acumular detalhes da compra
 
   linhas.forEach(function (linha, index) {
       if (index < linhas.length) {
           var quantidade = parseInt(linha.querySelector('select').value, 10);
-          var precoUnitario = parseFloat(linha.querySelector('td:nth-child(2)').textContent.replace('R$', '').replace(',', '.'));
+          
+          // Verifica se a quantidade é maior que zero antes de continuar
+          if (quantidade > 0) {
+              var precoUnitario = parseFloat(linha.querySelector('td:nth-child(2)').textContent.replace('R$', '').replace(',', '.'));
 
-          if (index === 3) {
-              quantidade *= 4;
-              precoUnitario /= 4;
+              if (index === 3) {
+                  quantidade *= 4;
+                  precoUnitario /= 4;
+              }
+              else if (index === 4) {
+                  quantidade *= 2;
+                  precoUnitario /= 2;
+              }
+
+              var subtotal = quantidade * precoUnitario;
+
+              linha.querySelector('td:nth-child(4)').textContent = 'R$' + subtotal.toFixed(2);
+
+              totalIngressos += quantidade;
+              totalValor += subtotal;
+
+              // Acumula detalhes da compra no formato desejado
+              detalhesCompra += `${linha.querySelector('td:first-child').textContent} ${quantidade} x R$${precoUnitario.toFixed(2)}= R$${subtotal.toFixed(2)}\n`;
           }
-          else if (index === 4) {
-              quantidade *= 2;
-              precoUnitario /= 2;
-          }
-
-          var subtotal = quantidade * precoUnitario;
-
-          linha.querySelector('td:nth-child(4)').textContent = 'R$' + subtotal.toFixed(2);
-
-          totalIngressos += quantidade;
-          totalValor += subtotal;
       }
   });
+
+  // Atualiza o elemento 'detalhes-compra' com a string acumulada
+  document.getElementById('detalhes-compra').textContent = detalhesCompra;
 
   document.getElementById('quant-ingressos').textContent = totalIngressos;
   document.getElementById('valor-pagar').textContent = 'R$' + totalValor.toFixed(2);

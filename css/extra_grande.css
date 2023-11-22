@@ -529,6 +529,11 @@ header{
     margin-left: 50px;
 }
 
+.container-confirma-ingresso h2{
+    margin-top: 30px;
+    color: white;
+}
+
 .container-confirma-ingresso button{
     height: 60px;
     width: 250px;
@@ -540,6 +545,11 @@ header{
     font-weight: bold;
     margin-top: auto;
     margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.container-confirma-ingresso button:hover{
+    background-color: #0d9b00;
 }
 
 
