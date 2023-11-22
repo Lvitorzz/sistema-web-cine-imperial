@@ -71,13 +71,12 @@ function calcularTotais() {
   var linhas = document.querySelectorAll('table tbody tr');
   var totalIngressos = 0;
   var totalValor = 0;
-  var detalhesCompra = ''; // Variável para acumular detalhes da compra
+  let detalhesCompra = '';
 
   linhas.forEach(function (linha, index) {
       if (index < linhas.length) {
           var quantidade = parseInt(linha.querySelector('select').value, 10);
           
-          // Verifica se a quantidade é maior que zero antes de continuar
           if (quantidade > 0) {
               var precoUnitario = parseFloat(linha.querySelector('td:nth-child(2)').textContent.replace('R$', '').replace(',', '.'));
 
@@ -97,15 +96,12 @@ function calcularTotais() {
               totalIngressos += quantidade;
               totalValor += subtotal;
 
-              // Acumula detalhes da compra no formato desejado
-              detalhesCompra += `${linha.querySelector('td:first-child').textContent} ${quantidade} x R$${precoUnitario.toFixed(2)}= R$${subtotal.toFixed(2)}\n`;
+              detalhesCompra += `\n${linha.querySelector('td:first-child').textContent.substring(0,14)} ${quantidade} x R$${precoUnitario.toFixed(2)} = R$${subtotal.toFixed(2).replace('.', ',')}`;
           }
       }
   });
 
-  // Atualiza o elemento 'detalhes-compra' com a string acumulada
   document.getElementById('detalhes-compra').textContent = detalhesCompra;
-
   document.getElementById('quant-ingressos').textContent = totalIngressos;
   document.getElementById('valor-pagar').textContent = 'R$' + totalValor.toFixed(2);
 }
