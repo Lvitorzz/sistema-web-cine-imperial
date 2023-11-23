@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pagamento</title>
+    <link rel="stylesheet" href="../css/padrao.css">
+    <link rel="stylesheet" media="screen and (max-width: 575px)" href="../css/extra_pequeno.css" href="../css/extra_pequeno.css">
+    <link rel="stylesheet" media="screen and (min-width: 576px) and (max-width: 767px)" href="../css/pequeno.css" href="../css/pequeno.css">
+    <link rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)" href="../css/medio.css" href="../css/medio.css">
+    <link rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)" href="../css/grande.css" href="../css/grande.css">
+    <link rel="stylesheet" media="screen and (min-width: 1200px)" href="../css/extra_grande.css" href="../css/extra_grande.css">
+</head>
+<body>
+    <div class="card-pagamento">
+        <h1>REALIZAR PAGAMENTO</h1>
+        <div class="fase">
+            <div id="etapa1">Selecionar Horario</div>
+            <div id="etapa2">Selecionar Ingresso</div>
+            <div id="etapa3">Pagamento</div>
+            <div id="etapa4">Confirmação</div>
+        </div>
+    </div>
+    
+    <div class="detalhes-filme-pagamento">
+        <p id="detalhes-ingresso"></p>
+    </div>
+    
+
+    <div class="metodo-pagamento">
+        <label for="metodo">Escolha o Método de Pagamento:</label>
+        <select id="metodo" name="metodo">
+            <option value="credito">Cartão de Crédito</option>
+            <option value="debito">Cartão de Débito</option>
+            <option value="pix">PIX</option>
+        </select>
+    </div>
+
+    <button id="pagar-btn">Pagar</button>
+
+    <script src="/scripts/pagamento.js"></script>
+</body>
+</html>

@@ -305,13 +305,13 @@ header{
 
 
   
-/*=-=-=-==-=--=-==-CSS TELA DE ESCOLHER HORARIO-=-=-=-=-==-=-=-=--*/
+/*=-=-=-==-=--=-==-CSS TELA DE ESCOLHER INGRESSO-=-=-=-=-==-=-=-=--*/
 
 .escolher-ingressos{
     height: 120px;
     background-color: #18213B;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     border-radius: 0 0 25px 25px;
     box-shadow: 1px 2px 20px black;
 }
@@ -319,13 +319,27 @@ header{
 .escolher-ingressos .texto-escolher-ingresso{
     color: white;
     font-size: 1.6em;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-left: 450px;
 }
 
-.fase{
-    background-color: red;
+.escolher-ingressos .fase{
+    display: flex;
     margin: auto;
+}
+
+.escolher-ingressos .etapa-atual {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+.escolher-ingressos .fase div{
+    padding: 5px;
+    border: 1px solid white;
+    font-size: 0.7em;
+    font-weight: bold;
+    color: white;
 }
 
 .container-escolher-ingressos{
@@ -339,7 +353,7 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 5px;
     margin-top: 20px;
     margin-left: 30px;
 }
@@ -356,15 +370,15 @@ header{
     margin-bottom: 5px;
     text-align: center;
     color: white;
-    font-size: 1.7em;
+    font-size: 1.5em;
 }
 
 .escolher-detalhes-ingresso p{
     margin-bottom: 2px;
     font-weight: bold;
-    font-size: 0.9em;
+    font-size: 0.7em;
     color: white;
-    margin-left: 10px;
+    margin-left: -20px;
 }
 
 .escolher-ingressos-endereco{
@@ -373,19 +387,20 @@ header{
 
 .escolher-ingressos-endereco iframe{
     box-shadow: 1px 1px 5px black;
-    margin-left: 15px;
     margin-top: 10px;
     border-radius: 10px;
 }
 
 .escolher-ingressos-endereco-texto h2{
-    font-size: 1.1em;
-    margin-top: 20px;
+    font-size: 0.8em;
+    margin-top: 30px;
     color: #1a1a1a;
+    text-align: center;
 }
 
 .escolher-ingressos-endereco-texto h3{
-    font-size: 0.8em;
+    font-size: 0.6em;
+    text-align: center;
     color: #120F26;
 }
 
@@ -393,7 +408,7 @@ header{
     margin-top: 20px;
     height: 550px;
     width: 700px;
-    border-radius: 20px;
+    border-radius: 5px;
     margin-left: 50px;
     background-color: white;
     padding: 10px;
@@ -426,7 +441,7 @@ header{
 .tooltip-dupla {
     position: absolute;
     top: 35%;
-    right: 27px;
+    margin-left: 125px;
     width: 20px;
     height: 20px;
     background-color: #120F26;
@@ -440,7 +455,7 @@ header{
 .tooltip {
     position: absolute;
     top: 35%;
-    right: 47px;
+    margin-left: 123px;
     width: 20px;
     height: 20px;
     background-color: #120F26;
@@ -540,7 +555,7 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 5px;
     margin-top: 20px;
     margin-left: 50px;
 }
@@ -555,16 +570,17 @@ header{
     white-space: pre-line;
     line-height: 3;
     color: white;
+    margin-bottom: 0px;
 }
 
 .container-confirma-ingresso button{
-    height: 60px;
-    width: 250px;
-    border-radius: 10px;
+    height: 50px;
+    width: 150px;
+    border-radius: 5px;
     border: none;
-    background-color: #15ff00;
+    background-color: #4CAF50;
     color: white;
-    font-size: 1.6em;
+    font-size: 1.2em;
     font-weight: bold;
     margin-top: auto;
     margin-bottom: 40px;
@@ -572,13 +588,89 @@ header{
 }
 
 .container-confirma-ingresso button:hover{
-    background-color: #0d9b00;
+    background-color: #419644;
 }
 
 .container-confirma-ingresso h3{
-    margin-bottom: 40px;
+    margin-bottom: 95px;
+    position: absolute;
+    bottom: 0;
 }
 
+.container-confirma-ingresso .preco-final{
+    margin-bottom: 70px;
+    position: absolute;
+    bottom: 0;
+}
+
+/* =-=-=-=-=-=-=-=- CSS TELA DE PAGAMENTO -=-=-=-=-=-=-=-=-=-=*/
+
+.card-pagamento{
+    height: 120px;
+    background-color: #18213B;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 1px 2px 20px black;
+    color: white;
+}
+
+.card-pagamento h1{
+    text-align: center;
+    font-size: 2.6em;
+    margin-top: 20px;
+}
+
+.card-pagamento .fase{
+    display: flex;
+    margin: auto;
+}
+
+.card-pagamento .etapa-atual {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+.card-pagamento .fase div{
+    padding: 5px;
+    border: 1px solid white;
+    font-size: 0.7em;
+    font-weight: bold;
+    color: white;
+}
+
+.card-pagamento .metodo-pagamento {
+    margin-bottom: 20px;
+}
+
+.metodo-pagamento label{
+    color: white;
+}
+
+.card-pagamento #pagar-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#pagar-btn:hover {
+    background-color: #45a049;
+}
+
+.detalhes-filme-pagamento p {
+    white-space: pre-line;
+    margin-bottom: 10px;
+    color: white;
+    margin-left: 25px;
+}
 
 /* =-=-=-=-=-=-=-=- CSS TELA DE SERVIÇOS -=-=-=-=-=-=-=-=-=-=*/
 

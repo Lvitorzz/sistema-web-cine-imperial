@@ -17,9 +17,12 @@
             <h1>ESCOLHER INGRESSOS</h1>
         </div>
         <div class="fase">
-            1 2 3 4 5
+            <div id="etapa1">Selecionar Horario</div>
+            <div id="etapa2">Selecionar Ingresso</div>
+            <div id="etapa3">Pagamento</div>
+            <div id="etapa4">Confirmação</div>
         </div>
-    </section>
+    </section>  
 
     <div class="container-escolher-ingressos">
         <section class="escolher-ingressos-info-filme">
@@ -133,11 +136,11 @@
                         <td>R$0.00</td>
                     </tr>
                     <tr>
-                        <td>Dupla Paga Meia
+                        <td>Duplo Ingresso
                             <div class="tooltip-dupla">
                                 ?
                                 
-                            </div><div class="tooltip-text-dupla">2 Ingressos com preço de meia entrada cada.</div>
+                            </div><div class="tooltip-text-dupla">2 Ingressos com preço de 1.</div>
                         </td>
                         <td>R$29.00</td>
                         <td>
@@ -168,10 +171,14 @@
         </section>
 
         <section class="container-confirma-ingresso">
-            <h2>Detalhes da compra</h2>
-            <p class="detalhes-compra" id="detalhes-compra"></p>
+            <div>
+                <h2>Detalhes da compra</h2>
+                <p class="detalhes-compra" id="detalhes-compra"></p>  
+            </div>
+            
             <h3>Total</h3>
-            <button class="botao-confirmar-compra">Continuar</button>
+            <h3 class="preco-final" id="preco-final">R$00,00</h3>
+            <button id="continuar-btn" class="botao-confirmar-compra">Continuar</button>
 
         </section>
     </div>
