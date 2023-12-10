@@ -937,3 +937,88 @@ header a:hover::before {
     text-align: justify;
     padding-right: 130px;
 }
+
+/* =-=-=-=-=-=-=-=- CSS TELA DE NOTÍCIAS -=-=-=-=-=-=-=-=-=-=*/
+
+#banner-noticias {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+#scrollbar {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    user-select: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-slide {
+    flex: 1 0 0%;
+    height: 100%;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section {
+    padding-top: 40px;
+    max-width: 800px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.noticia {
+    width: 48%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    background-color: #30295e;
+    border: 1px solid #30295e;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.noticia img {
+    width: 100%;
+    height: auto;
+}
+
+.noticia-titulo {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffffb1;
+}

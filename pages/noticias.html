@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias</title>
+    <link rel="stylesheet" href="../css/padrao.css">
+    <link rel="stylesheet" media="screen and (max-width: 575px)" href="../css/extra_pequeno.css" href="../css/extra_pequeno.css">
+    <link rel="stylesheet" media="screen and (min-width: 576px) and (max-width: 767px)" href="../css/pequeno.css" href="../css/pequeno.css">
+    <link rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)" href="../css/medio.css" href="../css/medio.css">
+    <link rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)" href="../css/grande.css" href="../css/grande.css">
+    <link rel="stylesheet" media="screen and (min-width: 1200px)" href="../css/extra_grande.css" href="../css/extra_grande.css">
+</head>
+<body>
+    <div id="banner-noticias">
+        <div id="scrollbar">
+            <img class="banner-image" src="/imgs/demostrativo_noticias_1.png" alt="Imagem 1">
+            <img class="banner-image" src="/imgs/demonstrativo_noticias_2.png" alt="Imagem 2">
+        </div>
+    </div>
+
+    <section>
+        <div class="noticia">
+          <img src="/imgs/hq720.jpg" alt="Imagem da Notícia 1">
+          <div class="noticia-titulo">Título da Notícia 1</div>
+        </div>
+    
+        <div class="noticia">
+          <img src="/imgs/hq720.jpg" alt="Imagem da Notícia 2">
+          <div class="noticia-titulo">Título da Notícia 2</div>
+        </div>
+
+        <div class="noticia">
+            <img src="/imgs/hq720.jpg" alt="Imagem da Notícia 1">
+            <div class="noticia-titulo">Título da Notícia 3</div>
+        </div>
+      
+        <div class="noticia">
+            <img src="/imgs/hq720.jpg" alt="Imagem da Notícia 2">
+            <div class="noticia-titulo">Título da Notícia 4</div>
+        </div>
+
+        <div class="noticia">
+            <img src="/imgs/hq720.jpg" alt="Imagem da Notícia 1">
+            <div class="noticia-titulo">Título da Notícia 5</div>
+        </div>
+      
+        <div class="noticia">
+            <img src="/imgs/hq720.jpg" alt="Imagem da Notícia 2">
+            <div class="noticia-titulo">Título da Notícia 6</div>
+        </div>
+
+
+    
+        <!-- Adicione mais notícias conforme necessário -->
+    </section>
+
+
+    <!-- Scrip da página-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $('#scrollbar').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000, // Intervalo de troca das imagens em milissegundos (opcional)
+            infinite: true,
+            arrows: false,
+            dots: false
+            });
+        });
+    </script>
+</body>
+</html>
