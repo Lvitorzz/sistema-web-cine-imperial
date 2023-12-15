@@ -755,7 +755,6 @@ header{
     height: 100%;
 }
 
-/* Estilo para o header fixado no topo */
 header {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     background: #2A3659;
@@ -767,7 +766,6 @@ header {
     z-index: 1000;
 }
 
-/* Estilo para o header e a lista de navegação */
 header, nav ul {
     display: flex;
     justify-content: space-between;
@@ -789,59 +787,57 @@ header a {
     font-weight: 500;
 }
 
-/* Efeito ao passar o mouse sobre os links */
+
 header a:hover {
-    color: #14FF00; /* Altera a cor ao passar o mouse */
+    color: #14FF00; 
 }
 
-/* Linha que aparece abaixo do link ao passar o mouse */
+
 header a::before {
     content: '';
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: #14FF00; /* Cor da linha */
-    bottom: -2px; /* Posiciona a linha abaixo do link */
+    background-color: #14FF00; 
+    bottom: -2px;
     left: 0;
-    transform: scaleX(0); /* Inicialmente, a linha não é visível */
-    transform-origin: 0% 50%; /* Altera a origem para o lado esquerdo */
-    transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave para o efeito */
+    transform: scaleX(0); 
+    transform-origin: 0% 50%;
+    transition: transform 0.3s ease-in-out;
 }
 
 header a:hover::before {
-    transform: scaleX(1); /* Aumenta a largura da linha ao passar o mouse */
+    transform: scaleX(1);
 }
 
 .container-informativo-1 {
     padding-top: 60px;
-    display: flex; /* Ativa o modelo de layout flexível */
+    display: flex;
 }
 
-/* Estilo para a div da imagem */
 .image-container {
-    flex: 1; /* A imagem ocupará 1 parte do espaço disponível */
-    display: flex; /* Ativa o modelo de layout flexível na div da imagem */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    flex: 1;
+    display: flex;
+    justify-content: center;    
+    align-items: center;    
 }
 
-/* Estilo para a imagem dentro da div */
 .image-container img {
-    width: 600px; /* A imagem ocupará 100% da largura da div pai */
+    width: 600px;
     max-width: 100%;
-    height: auto; /* Mantém a proporção da imagem */
-    display: block; /* Remove espaço extra abaixo da imagem */
+    height: auto; 
+    display: block; 
 }
 
-/* Estilo para a div do texto */
+
 .text-container {
-    flex: 1; /* O texto ocupará 1 parte do espaço disponível */
-    display: flex; /* Ativa o modelo de layout flexível na div do texto */
-    flex-direction: column; /* Alinha os itens em coluna */
-    justify-content: center; /* Centraliza horizontalmente */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: baseline;
-    padding: 20px; /* Adiciona algum espaçamento interno para melhor visualização */
-    box-sizing: border-box; /* Garante que o padding não aumente o tamanho total */
+    padding: 20px;
+    box-sizing: border-box; 
     color: #fff;
 }
 
@@ -868,7 +864,7 @@ header a:hover::before {
 }
 
 .text-container p {
-    text-align: justify; /* Justifica o texto */
+    text-align: justify;
     padding-right: 130px;
 }
 
@@ -877,7 +873,7 @@ header a:hover::before {
     display: flex;
 }
 
-/* Nova div para a imagem */
+
 .new-image-container {
     flex: 1;
     display: flex;
@@ -885,7 +881,7 @@ header a:hover::before {
     align-items: center;
 }
 
-/* Estilo para a imagem dentro da nova div */
+
 .new-image-container img {
     width: 600px;
     max-width: 100%;
@@ -925,12 +921,12 @@ header a:hover::before {
     cursor: pointer;
     border-radius: 30px;
     font-weight: 550;
-    transition: background-color 0.3s, transform 0.3s; /* Adiciona transições para a mudança de cor e escala */
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .text-container button:hover {
     background-color: #1a1a1a;
-    transform: scale(1.05); /* Adiciona uma escala ao passar o mouse */
+    transform: scale(1.05);
 }
 
 .text-container p {
@@ -1043,3 +1039,64 @@ section {
     padding: 0px 40px 0px 40px;
 }
 
+/* =-=-=-=-=-=-=-=- FOOTER PÁGINAS -=-=-=-=-=-=-=-=-=-=*/
+
+footer {
+    background-color: #111111;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.container-footer {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.coluna-footer {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.coluna-footer:last-child {
+    margin-right: 0;
+}
+
+.coluna-footer h2 {
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+}
+
+.coluna-footer p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.coluna-footer a {
+    text-decoration: none;
+    color: #5F95FF;
+    margin-left: 0;
+    padding-left: 5px;
+}
+
+.direitos-reservados {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 40px;
+}
+
+.imagem-full-width {
+    position: relative;
+    width: 100%;
+    height: 181px;
+    overflow: hidden;
+}
+
+.imagem-full-width img {
+    cursor: pointer;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
