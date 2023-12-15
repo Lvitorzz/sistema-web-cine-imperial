@@ -20,3 +20,26 @@ var filmes=[
     nomeFilme = data.Title;
   }
   getMovieInfo(filmes); //enviar nome do filme selecionado para p escolherFilme.js
+
+
+  document.getElementById('loginLink').addEventListener('click', function(event) {
+    document.getElementById('loginForm').style.display = 'block';
+    event.stopPropagation();
+});
+
+document.body.addEventListener('click', function() {
+    document.getElementById('loginForm').style.display = 'none';
+});
+
+document.getElementById('loginForm').addEventListener('click', function(event) {
+    event.stopPropagation();
+});
+
+function login() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    alert('Usuário: ' + username + '\nSenha: ' + password);
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
+    document.getElementById('loginForm').style.display = 'none';
+}
