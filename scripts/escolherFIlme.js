@@ -117,7 +117,7 @@ function dataSelecionada(botao, dia) {
   escolherHorario();
 }
 
-let filme = "the batman";
+let filme = "Wonka"; //receber o filme da tela inicial
 let nomeFilme = '';
 async function getMovieInfo(filme) {
   
