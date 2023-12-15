@@ -19,10 +19,12 @@
 }
 
 .banner{
-    background-color: red;
-    margin: 50px 50px 50px 50px;
+    background-color: #120F26;
+    margin: 100px 50px 50px 50px;
     height: 192px;
+    align-items: center;
 }
+
 header{
     /*background: linear-gradient(black ,#272727 30%, black 200%);*/
     z-index: 1;
