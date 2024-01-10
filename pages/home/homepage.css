@@ -1,0 +1,133 @@
+body{
+    background-color: #120F26;
+}
+
+.header {
+    color: white;
+    text-align: center;
+    
+}
+
+.headnav nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+}
+
+.txt-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.headnav img{
+    height: 75px;
+    width: 75px;
+}
+
+.headnav a {
+    text-decoration: none;
+    color: white;
+}
+
+.headnav button{
+    height: 60px;
+    width: 150px;
+    cursor: pointer;
+    background-color: #27498C;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.btn-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    background-color: #27498C;
+    padding: 10px;
+}
+
+.select a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+
+.select a:hover::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    bottom: -2px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.select a:hover::before {
+    transform: scaleX(1);
+}
+
+.select li {
+    margin: 0 10px;
+}
+
+.banner{
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner img {
+    height: 200px;
+}
+
+.select2 ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    background-color: #27498C;
+    padding: 10px;
+}
+
+.select2 li {
+    margin: 0 10px;
+}
+
+.cartaz {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.cartaz__link {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.cartaz__link:hover {
+    transform: translateY(-3px);
+}
+
+.cartaz__img {
+    width: 150px;
+    height: 200px;
+    background-color: #ddd;
+    margin: 10px;
+}

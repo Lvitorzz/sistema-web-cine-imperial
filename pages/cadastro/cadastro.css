@@ -2,21 +2,13 @@ body{
     background-color: #120F26;
 }
 
-header{
-    background-color: violet;
-    height: 80px;
-}
-
 .container-telaCadastro{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .form-cadastro{
-    height: 540px;
-    width: 400px;
+    height: 410px;
+    width: 700px;
     background-color: #27498C;
     border-radius: 25px;
     display: flex;
@@ -24,17 +16,19 @@ header{
 }
 
 .cadastro-container{
-    margin-top: 20px;
+    margin-left: 90px;
+    margin-top: 25px;
+    flex: 1;
 }
 
 .cadastro-container h1{
     margin-bottom: 5px;
-    font-size: 1.1em;
+    font-size: 2em;
     color: white;
 }
 
 .cadastro-container h6{
-    font-size: 0.5em;
+    font-size: 0.8em;
     color: red;
 }
 
@@ -42,19 +36,19 @@ header{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0.7rem 0;
+    padding: 1rem 0;
 }
 
 .input-box{
     display:flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    margin-bottom: 1.1rem;
     margin: auto;
 }
 
 .input-box input{
     margin: 0.6rem 0;
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 1.2rem;
     border: none;
     border-radius: 10px;
     font-weight: 500;
@@ -69,7 +63,7 @@ header{
 }
 
 .input-box label{
-    font-size: 0.6em;
+    font-size: 0.8em;
     font-weight: 500;
     margin-bottom: -5px;
     color: white;
@@ -82,7 +76,7 @@ header{
 }
 
 .input-box .form-nome{
-    width: 320px;
+    width: 620px;
 }
 
 .input-box .form-apelido,
@@ -91,8 +85,7 @@ header{
 .form-telefone,
 .form-senha,
 .form-senha2{
-    width: 320px;
-    font-size: 0.6em;
+    width: 270px;
 }
 
 .btn-registrar{
@@ -101,13 +94,13 @@ header{
 }
 
 .btn-registrar button{
-    width: 200px;
-    height: 40px;
+    width: 300px;
+    height: 50px;
     border: 1px solid #4945F9;
     border-radius: 10px;
     background-color: #120F26;
     color: white;
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: 600;
     box-shadow: 1px 1px 6px #120F26;
     cursor: pointer;
@@ -125,29 +118,27 @@ header{
     font-weight: 100;
     text-align: center;
     margin-top: 10px;
-    font-size: 0.5em;
+    font-size: 0.7em;
 }
 
 .form-cadastro h5 a{
     color: white;
 }
 
-.anuncios-container {
-    margin-top: 80px;
+.anuncios-container{
+    margin-top: 20px;
     height: 500px;
     width: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    text-align: center;
 }
 
-.anuncios-container img {
-    display: block;
-    margin-top: 25px;
-    width: 314px;
-    height: 191px;
+.anuncios-container img{
+    margin-top: 20px;
+    width: 274px;
+    height: 151px;
     transition: transform 0.3s;
+    display: inline-block;
 }
 
 

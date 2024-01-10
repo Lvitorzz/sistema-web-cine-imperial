@@ -4,11 +4,72 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
   margin: 0; 
+}
+
+footer {
+  background-color: #111111;
+  color: #fff;
+  margin-top: 40px;
+}
+
+.container-footer {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.coluna-footer {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.coluna-footer:last-child {
+  margin-right: 0;
+}
+
+.coluna-footer h2 {
+  font-size: 1.5rem;
+  padding-bottom: 20px;
+}
+
+.coluna-footer p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.coluna-footer a {
+  text-decoration: none;
+  color: #5F95FF;
+  margin-left: 0;
+  padding-left: 5px;
+}
+
+.direitos-reservados {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 40px;
+}
+
+.imagem-full-width {
+  position: relative;
+  width: 100%;
+  height: 181px;
+  overflow: hidden;
+}
+
+.imagem-full-width img {
+  cursor: pointer;
+  width: 100%;
+  position: absolute;
+  top: 0;
 }
