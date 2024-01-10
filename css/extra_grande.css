@@ -1100,3 +1100,10 @@ footer {
     position: absolute;
     top: 0;
 }
+
+/* =-=-=-=-=-=-=-=- INDEX HOME -=-=-=-=-=-=-=-=-=-=*/
+
+.poster-index{
+    display: flex;
+    justify-content: center;
+}
