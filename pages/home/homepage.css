@@ -12,7 +12,6 @@ body{
     display: flex;
     justify-content: space-around;
     width: 100%;
-    height: 100px;
 }
 
 .txt-nav{
@@ -27,8 +26,8 @@ body{
     align-items: center;
 }
 .headnav img{
-    height: 75px;
-    width: 75px;
+    height: 105px;
+    width: 105px;
 }
 
 .headnav a {
@@ -36,20 +35,52 @@ body{
     color: white;
 }
 
-.headnav button{
-    height: 60px;
-    width: 150px;
-    cursor: pointer;
-    background-color: #27498C;
-    border: none;
-    border-radius: 10px;
-    color: white;
+.div-logo {
+    width: 100%;
+    font-family: 'Honk', system-ui;
+}
+
+#menu-usuario {
+    display: flex;
+    align-items: center;
+}
+
+#nome-usuario {
+    margin-right: 10px;
+}
+
+#opcoes-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#opcoes-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+#opcoes-menu a:hover {
+    background-color: #f0f0f0;
 }
 
 .btn-nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 10px;
+}
+
+.btn-nav button{
+    height: 50px;
+    width: 50px;
+    border-radius: 500px;
+    border: none;
+    cursor: pointer;
 }
 
 .select ul {

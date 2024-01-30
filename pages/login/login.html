@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre na sua conta</title>
+    <link rel="stylesheet" href="../../css/padrao.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container-telaCadastro">
+        <section class="cadastro-container"> 
+            <h1>Insira seus dados</h1>
+            <div class="form-cadastro">
+                <form action="login.php" method="post">
+                    <div class="input-container">
+                        <div class="input-box">
+                            <label for="nome">Email:</label>
+                            <input type="email" class="form-email" name="email" placeholder="Digite seu email" required> 
+                        </div>
+                        <div class="input-box">
+                            <label for="senha">Senha: </label>
+                            <input type="password" class="form-senha" name="senha" placeholder="Digite sua senha">
+                        </div>
+                    </div>
+                    <div class="btn-registrar">
+                        <button>Entrar</button>
+                    </div>
+
+                    <div>
+                        <h5>
+                            Ainda não tem uma conta? <a href="">Clique aqui e registre-se</a>
+                        </h5>
+                    </div>
+                    
+                </form>
+            </div>
+        </section>
+</body>
+</html>
