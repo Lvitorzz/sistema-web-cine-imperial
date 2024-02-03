@@ -13,7 +13,6 @@ body{
   
 .container-data-horario .filme {
     flex: 40%;
-
     height: 100vh;
     color: white;
 }

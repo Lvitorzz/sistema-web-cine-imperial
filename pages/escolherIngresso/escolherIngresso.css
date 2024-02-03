@@ -18,25 +18,6 @@ body{
     margin-left: 450px;
 }
 
-.escolher-ingressos .fase{
-    display: flex;
-    margin: auto;
-}
-
-.escolher-ingressos .etapa-atual {
-    background-color: #4CAF50;
-    color: white;
-    font-weight: bold;
-}
-
-.escolher-ingressos .fase div{
-    padding: 5px;
-    border: 1px solid white;
-    font-size: 0.7em;
-    font-weight: bold;
-    color: white;
-}
-
 .container-escolher-ingressos{
     display: flex;
 }
@@ -253,6 +234,7 @@ body{
     border-radius: 5px;
     margin-top: 20px;
     margin-left: 50px;
+    position: relative;
 }
 
 .container-confirma-ingresso h2{
@@ -268,6 +250,16 @@ body{
     margin-bottom: 0px;
 }
 
+.div-continuar{
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    position: absolute;
+    bottom: 0;
+    width: 100%; 
+}
+
 .container-confirma-ingresso button{
     height: 50px;
     width: 150px;
@@ -277,23 +269,9 @@ body{
     color: white;
     font-size: 1.2em;
     font-weight: bold;
-    margin-top: auto;
-    margin-bottom: 40px;
     cursor: pointer;
 }
 
 .container-confirma-ingresso button:hover{
     background-color: #419644;
-}
-
-.container-confirma-ingresso h3{
-    margin-bottom: 95px;
-    position: absolute;
-    bottom: 0;
-}
-
-.container-confirma-ingresso .preco-final{
-    margin-bottom: 70px;
-    position: absolute;
-    bottom: 0;
 }

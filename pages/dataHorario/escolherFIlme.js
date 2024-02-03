@@ -117,7 +117,11 @@ function dataSelecionada(botao, dia) {
   escolherHorario();
 }
 
-let filme = "Wonka"; //receber o filme da tela inicial
+const queryString = window.location.search;
+
+const urlParams = new URLSearchParams(queryString);
+
+const filme = urlParams.get('titulo');
 let nomeFilme = '';
 async function getMovieInfo(filme) {
   
@@ -185,7 +189,7 @@ function escolherHorario() {
       localStorage.setItem('dia', dia);
       localStorage.setItem('horario', horario);
 
-      window.location.href = 'escolherIngresso.html';
+      window.location.href = '../../pages/escolherIngresso/escolherIngresso.html';
     });
   });
 }

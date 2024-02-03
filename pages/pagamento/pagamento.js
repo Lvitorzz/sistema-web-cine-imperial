@@ -1,13 +1,3 @@
-function etapaAtual(etapaAtual) {
-    document.querySelectorAll('.fase div').forEach(function(elemento) {
-        elemento.classList.remove('etapa-atual');
-    });
-  
-    document.getElementById(`etapa${etapaAtual}`).classList.add('etapa-atual');
-  }
-  etapaAtual(3);
-
-
 document.addEventListener('DOMContentLoaded', function () {
 
     var ticket = JSON.parse(localStorage.getItem('ticket'));

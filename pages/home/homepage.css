@@ -8,6 +8,41 @@ body{
     
 }
 
+#filmeContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.filmeCard {
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    color: white;
+}
+
+.filmeCard:hover {
+    transform: translateY(-3px);
+}
+
+.filmeCard h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.filmeCard img {
+    max-width: 100%;
+    height: auto;
+}
+
 .headnav nav{
     display: flex;
     justify-content: space-around;
@@ -97,24 +132,25 @@ body{
     position: relative;
 }
 
-.select a:hover::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    bottom: -2px;
-    left: 0;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.select a:hover::before {
-    transform: scaleX(1);
-}
-
 .select li {
     margin: 0 10px;
+}
+
+.select button {
+    background-color: #27498C;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 600px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.select button:hover{
+    background-color: #1a356e;
+    transform: translateY(-3px);
 }
 
 .banner{
@@ -138,27 +174,4 @@ body{
 
 .select2 li {
     margin: 0 10px;
-}
-
-.cartaz {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.cartaz__link {
-    display: inline-block;
-    position: relative;
-    transition: transform 0.3s ease;
-}
-
-.cartaz__link:hover {
-    transform: translateY(-3px);
-}
-
-.cartaz__img {
-    width: 150px;
-    height: 200px;
-    background-color: #ddd;
-    margin: 10px;
 }

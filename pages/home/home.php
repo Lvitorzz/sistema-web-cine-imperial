@@ -13,29 +13,33 @@
         <div class="headnav">
             <nav>
                 <div class="logo-nav">
-                    <a href="index.html"><img src="../../imgs/Designer.png" class="logo" alt="logo"></a> 
+                    <a href="home.php"><img src="../../imgs/Designer.png" class="logo" alt="logo"></a> 
                 </div>
                 
                 <div class="txt-nav">
                     <h1>Cine Imperial</h1> 
                 </div>
                 <div class="btn-nav">
-                    <?php
-                        session_start();
-                        if (isset($_SESSION['usuario'])) {
-                            echo '<div id="menu-usuario">';
-                            echo '<p id="nome-usuario">Bem-vindo, ' . $_SESSION['usuario']['nome'] . '!</p>';
-                            echo '<button onclick="toggleMenu()"></button>';
-                            echo '<div id="opcoes-menu">';
-                            echo '<a href="#">Gerenciar Perfil</a>';
-                            echo '<a href="#">Minhas Compras</a>';
-                            echo '<a href="../../controllers/logoutController.php">Sair</a>';
-                            echo '</div>';
-                            echo '</div>';
-                        } else {
-                            echo '<a href="../../pages/login/login.html"><button>Entre na sua conta</button></a>';
+                <?php
+                    session_start();
+                    if (isset($_SESSION['usuario'])) {
+                        echo '<div id="menu-usuario">';
+                        echo '<p id="nome-usuario">Bem-vindo, ' . $_SESSION['usuario']['nome'] . '!</p>';
+                        echo '<button onclick="toggleMenu()"></button>';
+                        echo '<div id="opcoes-menu">';
+                        echo '<a href="#">Gerenciar Perfil</a>';
+                        echo '<a href="#">Minhas Compras</a>';
+                        if ($_SESSION['usuario']['email'] === 'admin@admin.com') {
+                            echo '<a href="../../pages_admin/filmes/filmes.php">Gerenciar Cinema</a>';
                         }
-                    ?>
+
+                        echo '<a href="../../controllers/logoutController.php">Sair</a>';
+                        echo '</div>';
+                        echo '</div>';
+                    } else {
+                        echo '<a href="../../pages/login/login.html"><button>Entre na sua conta</button></a>';
+                    }
+                ?>
                 </div>
             </nav>
         </div>
@@ -57,19 +61,16 @@
     <div class="select2">
         <nav >
             <ul class="select">
-                <li><a>Em Cartaz</a></li>
-                <li><a>Em Breve</a></li>
+                <li><button id="cartaz">Em Cartaz</button></li>
+                <li><button id="breve">Em Breve</button></li>
             </ul>
         </nav>
     </div>
-    <div class="cartaz">
-        <a href="#" class="cartaz__link"><div class="cartaz__img"></div></a>
-        <a href="#" class="cartaz__link"><div class="cartaz__img"></div></a>
-        <a href="#" class="cartaz__link"><div class="cartaz__img"></div></a>
-        <a href="#" class="cartaz__link"><div class="cartaz__img"></div></a>
-        <a href="#" class="cartaz__link"><div class="cartaz__img"></div></a>
-        <a href="#" class="cartaz__link"><div class="cartaz__img"></div></a>
+
+    <div id="filmeContainer">
+        
     </div>
+
 
     <footer>
         <div class="imagem-full-width">

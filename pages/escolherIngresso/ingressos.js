@@ -10,15 +10,6 @@ const horarioEscolhidoElement = document.getElementById('horario-escolhido');
 const salaEscolhidaElement = document.getElementById('sala-escolhida');
 const audioEscolhidoElement = document.getElementById('audio-escolhido');
 
-function etapaAtual(etapaAtual) {
-  document.querySelectorAll('.fase div').forEach(function(elemento) {
-      elemento.classList.remove('etapa-atual');
-  });
-
-  document.getElementById(`etapa${etapaAtual}`).classList.add('etapa-atual');
-}
-etapaAtual(2);
-
 let filme = `${filmeNome}`;
 async function getMovieInfo(filme) {
   const response = await fetch(
@@ -113,7 +104,7 @@ function calcularTotais() {
   document.getElementById('detalhes-compra').textContent = detalhesCompra;
   document.getElementById('quant-ingressos').textContent = totalIngressos;
   document.getElementById('valor-pagar').textContent = 'R$' + totalValor.toFixed(2);
-  document.getElementById('preco-final').textContent = 'R$' + totalValor.toFixed(2);
+  document.getElementById('preco-final').textContent = 'Total: R$' + totalValor.toFixed(2);
 }
 
 
@@ -146,7 +137,7 @@ function criarTicket() {
   };
   localStorage.setItem('ticket', JSON.stringify(ticket));
   if (quantidadeIngressos > 0){
-    window.location.href = 'pagamento.html';
+    window.location.href = '../../pages/pagamento/pagamento.html';
   } else{
     alert('Selecione pelo menos um ingresso!')
   }
