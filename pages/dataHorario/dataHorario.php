@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['usuario'])) {
+        header("Location: ../../pages/home/home.php");
+        exit();
+    } 
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -36,12 +43,12 @@
         <section class="data-horario">
             <h1>Escolha o dia e o horario para assistir este filme</h1>
             <div class="container-data" id="data-container">
-
+                
             </div>
             <div class="info-cinema">
                 <h1>Cine Vila Geek - Alagoinhas</h1>
             </div>
-
+            
             <div class="horario-container" id="horario-container">
                 <div class="sala1-legendado">
                 </div>
@@ -99,7 +106,15 @@
         <div class="direitos-reservados">
             <p>&copy; 2023 CineImperial. Todos os direitos reservados.</p>
         </div>
+        <?php
+                    session_start();
+                    if (isset($_SESSION['usuario'])) {
+                        echo '<p id="logado">1</p>';
+                    } else {
+                        echo '<p id="logado">2</p>';
+                    }
+                ?>
     </footer>
-    <script src="escolherFIlme.js"></script>
+    <script src="escolherFilme.js"></script>
 </body>
 </html>

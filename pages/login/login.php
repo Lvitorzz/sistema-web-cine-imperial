@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'cpf' => $usuario->getCpf(),
             'telefone' => $usuario->getTelefone(),
         );
-
+        echo json_encode(['logged_in' => $usuarioAutenticado]);
         header("Location: ../../pages/home/home.php");
         exit();
     } else {

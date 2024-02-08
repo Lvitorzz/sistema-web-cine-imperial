@@ -41,7 +41,7 @@ async function displayMovies(filmes) {
 
     if (filme.tipo === 'Cartaz') {
       filmeDiv.addEventListener("click", function () {
-        window.location.href = `../../pages/dataHorario/dataHorario.html?titulo=${encodeURIComponent(data.Title)}`;
+        window.location.href = `../../pages/dataHorario/dataHorario.php?titulo=${encodeURIComponent(data.Title)}`;
       });
     }
 

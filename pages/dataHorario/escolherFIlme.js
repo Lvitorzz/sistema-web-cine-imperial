@@ -172,25 +172,31 @@ document.addEventListener("DOMContentLoaded", function () {
 function escolherHorario() {
   const horarioBotoes = document.querySelectorAll('.horario-btn');
   const diaSelecionado = botaoSelecionado.textContent.split('\n')[0];
-
-  horarioBotoes.forEach((horarioBotao) => {
-    horarioBotao.addEventListener('click', function() {
-      const dia = diaSelecionado;
-      const info = horarioBotao.id;
-      const splitInfo = info.split('-');
-      const salaNumero = splitInfo[0].substring(4);
-      const salaEscolhida = `${salaNumero}`;
-      const audioEscolhido = splitInfo[1];
-      const horario = horarioBotao.textContent;
-
-      localStorage.setItem('sala', salaEscolhida);
-      localStorage.setItem('tipoAudio', audioEscolhido);
-      localStorage.setItem('filme', nomeFilme);
-      localStorage.setItem('dia', dia);
-      localStorage.setItem('horario', horario);
-
-      window.location.href = '../../pages/escolherIngresso/escolherIngresso.html';
-    });
-  });
+  const elementoLogado = document.getElementById('logado');
+  const conteudoLogado = elementoLogado.textContent || elementoLogado.innerText;
+  
+  
+    horarioBotoes.forEach((horarioBotao) => {
+      horarioBotao.addEventListener('click', function() {
+        if(conteudoLogado == 1){
+          const dia = diaSelecionado;
+          const info = horarioBotao.id;
+          const splitInfo = info.split('-');
+          const salaNumero = splitInfo[0].substring(4);
+          const salaEscolhida = `${salaNumero}`;
+          const audioEscolhido = splitInfo[1];
+          const horario = horarioBotao.textContent;
+    
+          localStorage.setItem('sala', salaEscolhida);
+          localStorage.setItem('tipoAudio', audioEscolhido);
+          localStorage.setItem('filme', nomeFilme);
+          localStorage.setItem('dia', dia);
+          localStorage.setItem('horario', horario);
+    
+          window.location.href = '../../pages/escolherIngresso/escolherIngresso.php';
+        }else{
+          window.location.href = '../../pages/login/login.htmlz';
+        }
+      });
+    }); 
 }
-

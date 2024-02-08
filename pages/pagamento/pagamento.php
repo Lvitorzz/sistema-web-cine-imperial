@@ -1,11 +1,20 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['usuario'])) {
+        header("Location: ../../pages/home/home.php");
+        exit();
+    } 
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Pagamento</title>
     <link rel="stylesheet" href="../../css/padrao.css">
     <link rel="stylesheet" href="pagamento.css">
+
 <body>
     <div class="card-pagamento-header">
         <h1>REALIZAR PAGAMENTO</h1>
@@ -13,7 +22,8 @@
     <section class="pagar-ingressos">
         <div class="detalhes-filme-pagamento">
             <h3>Verifique as informações do seu pedido antes de confirmar</h3>
-            <p id="detalhes-ingresso"></p><div class="metodo-pagamento">
+            <p id="detalhes-ingresso"></p>
+            <div class="metodo-pagamento">
                 <label for="metodo">Escolha o Método de Pagamento:</label>
                 <select class="selecionar-metodo-pagamento" id="metodo" name="metodo">
                     <option value="credito">Cartão de Crédito</option>
@@ -22,11 +32,11 @@
                 </select>
             </div>
             <div class="container-pagar-btn">
-               <button class="pagar-btn" id="pagar-btn">Pagar</button> 
+                <button class="pagar-btn" id="pagar-btn">Pagar</button>
             </div>
-            
+
         </div>
-        
+
     </section>
     </div>
 
@@ -74,4 +84,5 @@
     </footer>
     <script src="pagamento.js"></script>
 </body>
+
 </html>
