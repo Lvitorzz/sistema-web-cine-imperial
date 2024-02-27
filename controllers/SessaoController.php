@@ -1,7 +1,7 @@
 <?php
 
 require_once("../../db/Conexao.php");
-
+require_once("../../models/SessaoModel.php");
 
 class SessaoController
 {
@@ -26,6 +26,37 @@ class SessaoController
             return false;
         }
     }
-}
 
-?>
+    public function listarSessoes()
+    {
+        try {
+            $query = "SELECT * FROM sessao";
+            $result = $this->conn->query($query);
+
+            if ($result) {
+                $sessoes = array();
+
+                while ($row = $result->fetch_assoc()) {
+                    $sessao = new SessaoModel(
+                        $row['idSessao'],
+                        $row['idFilme'],
+                        $row['idSala'],
+                        $row['dia'],
+                        $row['horario'],
+                        $row['audio']
+                    );
+
+                    $sessoes[] = $sessao;
+                }
+
+                return $sessoes;
+            } else {
+                echo "Erro ao recuperar as sessões do banco de dados.";
+                return false;
+            }
+        } catch (PDOException $e) {
+            echo "Erro ao executar a consulta: " . $e->getMessage();
+            return false;
+        }
+    }
+}
