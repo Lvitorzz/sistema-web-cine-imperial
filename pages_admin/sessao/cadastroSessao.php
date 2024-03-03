@@ -15,6 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($resultado) {
         echo "Sessão cadastrada com sucesso!";
+        header("Location: ../sessao/sessao.php");
+        exit();
     } else {
         echo "Erro ao cadastrar a sessão.";
     }

@@ -60,6 +60,7 @@ body{
     justify-content: center;
     align-items: center;
 }
+
 .headnav img{
     height: 105px;
     width: 105px;
@@ -111,9 +112,9 @@ body{
 }
 
 .btn-nav button{
-    height: 50px;
-    width: 50px;
-    border-radius: 500px;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
     border: none;
     cursor: pointer;
 }

@@ -1,20 +1,23 @@
 <?php
 require_once("../../controllers/filmeController.php");
-$filmeController = new FilmeController();
-$filmes = $filmeController->listarFilmesCartaz();
 
+$filmeController = new FilmeController();
+
+$filmes = $filmeController->listarFilmesCartaz();
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Sessão</title>
+    <link rel="stylesheet" href="sessao.css">
 </head>
 
 <body>
+<a href="../admin/admin.html"><button>Voltar ao painel</button></a>
     <h2>Cadastrar Sessão</h2>
     <form action="cadastroSessao.php" method="post">
         <label for="idSala">ID da Sala:</label>
@@ -43,6 +46,10 @@ $filmes = $filmeController->listarFilmesCartaz();
 
         <button type="submit">Cadastrar Sessão</button>
     </form>
+
+    <a href="sessoesCadastradas.php">
+        <button>Ver sessoes cadastradas</button>
+    </a>
 </body>
 
 </html>

@@ -68,6 +68,34 @@ class FilmeController
         }
         return $filmes;
     }
+
+    public function excluirFilmeCartaz($idFilme)
+    {
+        try {
+            $stmt = $this->conn->prepare("DELETE FROM filmes_cartaz WHERE idFilme = ?");
+            $stmt->bind_param("i", $idFilme);
+            $stmt->execute();
+
+            return true;
+        } catch (PDOException $e) {
+            echo "Erro ao excluir o filme cartaz: " . $e->getMessage();
+            return false;
+        }
+    }
+
+    public function excluirFilmeBreve($idFilme)
+    {
+        try {
+            $stmt = $this->conn->prepare("DELETE FROM filmes_breve WHERE idFilme = ?");
+            $stmt->bind_param("i", $idFilme);
+            $stmt->execute();
+
+            return true;
+        } catch (PDOException $e) {
+            echo "Erro ao excluir o filme breve: " . $e->getMessage();
+            return false;
+        }
+    }
 }
 
 

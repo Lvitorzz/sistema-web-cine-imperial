@@ -59,4 +59,17 @@ class SessaoController
             return false;
         }
     }
+
+    public function excluirSessao($idSessao)
+    {
+        try {
+            $stmt = $this->conn->prepare("DELETE FROM sessao WHERE idSessao = ?");
+            $stmt->bind_param("i", $idSessao);
+
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Erro ao excluir a sessão: " . $e->getMessage();
+            return false;
+        }
+    }
 }

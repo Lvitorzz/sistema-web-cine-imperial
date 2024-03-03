@@ -16,7 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($usuarioController->cadastrarUsuario($nome, $apelido, $email, $cpf, $telefone, $senha)) {
         echo "Usuário cadastrado com sucesso!";
-        
+        header("Location: ../home/home.php");
+        exit();   
     }else{
         echo "Erro ao cadastrar usuário.";
     }

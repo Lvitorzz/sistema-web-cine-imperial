@@ -27,10 +27,10 @@
                         echo '<p id="nome-usuario">Bem-vindo, ' . $_SESSION['usuario']['nome'] . '!</p>';
                         echo '<button onclick="toggleMenu()"></button>';
                         echo '<div id="opcoes-menu">';
-                        echo '<a href="#">Gerenciar Perfil</a>';
+                        echo '<a href="../../pages/usuarios/usuario.php">Gerenciar Perfil</a>';
                         echo '<a href="#">Minhas Compras</a>';
                         if ($_SESSION['usuario']['email'] === 'admin@admin.com') {
-                            echo '<a href="../../pages_admin/filmes/filmes.php">Gerenciar Cinema</a>';
+                            echo '<a href="../../pages_admin/admin/admin.html">Gerenciar Cinema</a>';
                         }
 
                         echo '<a href="../../controllers/logoutController.php">Sair</a>';
