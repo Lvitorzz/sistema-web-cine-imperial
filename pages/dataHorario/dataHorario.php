@@ -1,5 +1,21 @@
+<?php
+require_once("../../controllers/sessaoController.php");
+
+if (isset($_GET['id'])) {
+    $idFilme = $_GET['id'];
+
+    $sessaoController = new SessaoController();
+    $sessoes = $sessaoController->listarSessoesPorFilme($idFilme);
+} else {
+
+    header("Location: ../../pages/home/home.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +23,7 @@
     <link rel="stylesheet" href="../../css/padrao.css">
     <link rel="stylesheet" href="dataHorario.css">
 </head>
+
 <body>
     <div class="container-data-horario">
         <section class="filme" id="filme">
@@ -29,39 +46,84 @@
                 <div id="trailer-container" style="margin-left: 20px; margin-top: 10px;">
 
                 </div>
-                            
+
             </div>
         </section>
         <hr>
         <section class="data-horario">
             <h1>Escolha o dia e o horario para assistir este filme</h1>
             <div class="container-data" id="data-container">
-                
+
             </div>
             <div class="info-cinema">
                 <h1>Cine Vila Geek - Alagoinhas</h1>
             </div>
-            
+
             <div class="horario-container" id="horario-container">
-                <div class="sala1-legendado">
+                <div class="sessao-audio" id="dublado-container">
+                    <h2>Dublado</h2>
+                    <?php foreach ($sessoes as $sessao) : ?>
+                        <?php if ($sessao->getAudio() == 'dublado') : ?>
+                            <button class="sessao-button">
+                                <span>
+                                    <?php
+                                        $dataSessao = new DateTime($sessao->getDia());
+                                        $nomeDia = [
+                                            'Sunday' => 'Domingo',
+                                            'Monday' => 'Segunda-feira',
+                                            'Tuesday' => 'Terça-feira',
+                                            'Wednesday' => 'Quarta-feira',
+                                            'Thursday' => 'Quinta-feira',
+                                            'Friday' => 'Sexta-feira',
+                                            'Saturday' => 'Sábado'
+                                        ];
+
+                                        echo $dataSessao->format('d/m') . ' - ' . $nomeDia[$dataSessao->format('l')];
+                                    ?>
+                                </span>
+                                <span><?php echo substr($sessao->getHorario(), 0, 5); ?></span>
+                            </button>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 </div>
-                <div class="sala1-dublado">
-                </div>
-                <div class="sala2-legendado">
-                </div>
-                <div class="sala2-dublado">
+
+                <div class="sessao-audio" id="legendado-container">
+                    <h2>Legendado</h2>
+                    <?php foreach ($sessoes as $sessao) : ?>
+                        <?php if ($sessao->getAudio() == 'legendado') : ?>
+                            <button class="sessao-button">
+                                <span>
+                                    <?php
+                                        $dataSessao = new DateTime($sessao->getDia());
+                                        $nomeDia = [
+                                            'Sunday' => 'Domingo',
+                                            'Monday' => 'Segunda-feira',
+                                            'Tuesday' => 'Terça-feira',
+                                            'Wednesday' => 'Quarta-feira',
+                                            'Thursday' => 'Quinta-feira',
+                                            'Friday' => 'Sexta-feira',
+                                            'Saturday' => 'Sábado'
+                                        ];
+
+                                        echo $dataSessao->format('d/m') . ' - ' . $nomeDia[$dataSessao->format('l')];
+                                    ?>
+                                </span>
+                                <span><?php echo substr($sessao->getHorario(), 0, 5); ?></span>
+                            </button>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 </div>
             </div>
-            
+
         </section>
     </div>
 
     <div class="imagem-full-width">
         <img src="/imgs/Baixe.png" alt="Imagem de largura total">
     </div>
-    
+
     <footer>
-        
+
         <div class="container-footer">
             <div class="coluna-footer">
                 <h2>Menu</h2>
@@ -100,14 +162,15 @@
             <p>&copy; 2023 CineImperial. Todos os direitos reservados.</p>
         </div>
         <?php
-                    session_start();
-                    if (isset($_SESSION['usuario'])) {
-                        echo '<p id="logado">1</p>';
-                    } else {
-                        echo '<p id="logado">2</p>';
-                    }
-                ?>
+        session_start();
+        if (isset($_SESSION['usuario'])) {
+            echo '<p id="logado">1</p>';
+        } else {
+            echo '<p id="logado">2</p>';
+        }
+        ?>
     </footer>
     <script src="escolherFilme.js"></script>
 </body>
+
 </html>

@@ -60,6 +60,41 @@ class SessaoController
         }
     }
 
+    public function listarSessoesPorFilme($idFilme)
+{
+    try {
+        $query = "SELECT * FROM sessao WHERE idFilme = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("i", $idFilme);
+
+        if ($stmt->execute()) {
+            $result = $stmt->get_result();
+            $sessoes = array();
+
+            while ($row = $result->fetch_assoc()) {
+                $sessao = new SessaoModel(
+                    $row['idSessao'],
+                    $row['idFilme'],
+                    $row['idSala'],
+                    $row['dia'],
+                    $row['horario'],
+                    $row['audio']
+                );
+
+                $sessoes[] = $sessao;
+            }
+
+            return $sessoes;
+        } else {
+            echo "Erro ao recuperar as sessões do banco de dados.";
+            return false;
+        }
+    } catch (PDOException $e) {
+        echo "Erro ao executar a consulta: " . $e->getMessage();
+        return false;
+    }
+}
+
     public function excluirSessao($idSessao)
     {
         try {

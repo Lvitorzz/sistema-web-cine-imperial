@@ -57,16 +57,28 @@ class SalaController
         }
     }
 
-    public function excluirSala($idsala)
-    {
-        try {
-            $stmt = $this->conn->prepare("DELETE FROM salas WHERE idSala = ?");
-            $stmt->bind_param("i", $idSala);
+    public function excluirSala($idSala)
+{
+    try {
+        $stmt_check_sessions = $this->conn->prepare("SELECT COUNT(*) FROM sessao WHERE idSala = ?");
+        $stmt_check_sessions->bind_param("i", $idSala);
+        $stmt_check_sessions->execute();
+        $stmt_check_sessions->bind_result($count);
+        $stmt_check_sessions->fetch();
+        $stmt_check_sessions->close();
 
-            return $stmt->execute();
-        } catch (PDOException $e) {
-            echo "Erro ao excluir a sala: " . $e->getMessage();
+        if ($count > 0) {
+            echo "<script>alert('Não é possível excluir a sala porque existem sessões cadastradas para ela.');</script>";
             return false;
         }
+        
+        $stmt_delete_sala = $this->conn->prepare("DELETE FROM salas WHERE idSala = ?");
+        $stmt_delete_sala->bind_param("i", $idSala);
+
+        return $stmt_delete_sala->execute();
+    } catch (PDOException $e) {
+        echo "Erro ao excluir a sala: " . $e->getMessage();
+        return false;
     }
+}
 }

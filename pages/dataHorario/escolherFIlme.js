@@ -18,34 +18,32 @@ async function listarSessoesDB(idFilme) {
 
     const sessoesDoFilme = sessoes.filter(sessao => sessao.idFilme === idFilme);
 
-    sessoesDoFilme.forEach(sessao => {
-      if (sessao.dia && typeof sessao.dia === 'string' && sessao.horario && typeof sessao.horario === 'string') {
-        const dataFormatada = sessao.dia.split(' ')[0];
-        const dataSessao = new Date(dataFormatada);
+    // sessoesDoFilme.forEach(sessao => {
+    //   if (sessao.dia && typeof sessao.dia === 'string' && sessao.horario && typeof sessao.horario === 'string') {
+    //     const dataFormatada = sessao.dia.split(' ')[0];
+    //     const dataSessao = new Date(dataFormatada);
 
-        if (!isNaN(dataSessao.getTime())) {
-          const diaSemana = dataSessao.toLocaleDateString('pt-BR', { weekday: 'short' });
-          const horariosSessao = sessao.horario.split(',').map(horario => horario.trim());
+    //     if (!isNaN(dataSessao.getTime())) {
+    //       const diaSemana = dataSessao.toLocaleDateString('pt-BR', { weekday: 'short' });
+    //       const horariosSessao = sessao.horario.split(',').map(horario => horario.trim());
 
-          const button = document.createElement('button');
-          button.textContent = `Data da sessão: ${dataSessao.toLocaleDateString()} - Dia da semana: ${diaSemana} - Horários: ${horariosSessao.join(', ')}`;
+    //       const button = document.createElement('button');
+    //       button.textContent = `Data da sessão: ${dataSessao.toLocaleDateString()} - Dia da semana: ${diaSemana} - Horários: ${horariosSessao.join(', ')}`;
 
-          // Adicionando botão diretamente à div "horario-container"
-          horarioContainer.appendChild(button);
+    //       horarioContainer.appendChild(button);
 
-          // Adicionar um evento de clique ao botão (se necessário)
-          button.addEventListener('click', () => {
-            escolherHorario(sessao);
-            console.log('Botão clicado:', sessao);
-          });
+    //       button.addEventListener('click', () => {
+    //         escolherHorario(sessao);
+    //         console.log('Botão clicado:', sessao);
+    //       });
 
-        } else {
-          console.error(`Formato de data inválido: ${sessao.data}`);
-        }
-      } else {
-        console.error(`Propriedades 'data' ou 'horario' ausentes ou não são strings: ${JSON.stringify(sessao)}`);
-      }
-    });
+    //     } else {
+    //       console.error(`Formato de data inválido: ${sessao.data}`);
+    //     }
+    //   } else {
+    //     console.error(`Propriedades 'data' ou 'horario' ausentes ou não são strings: ${JSON.stringify(sessao)}`);
+    //   }
+    // });
 
   } catch (error) {
     console.error('Erro ao processar resposta:', error);
@@ -102,25 +100,25 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-function escolherHorario(sessao) { 
-        if(conteudoLogado == 1){
-          const dia = diaSelecionado;
-          const info = horarioBotao.id;
-          const splitInfo = info.split('-');
-          const salaNumero = splitInfo[0].substring(4);
-          const salaEscolhida = `${salaNumero}`;
-          const audioEscolhido = splitInfo[1];
-          const horario = horarioBotao.textContent;
+// function escolherHorario(sessao) { 
+//         if(conteudoLogado == 1){
+//           const dia = diaSelecionado;
+//           const info = horarioBotao.id;
+//           const splitInfo = info.split('-');
+//           const salaNumero = splitInfo[0].substring(4);
+//           const salaEscolhida = `${salaNumero}`;
+//           const audioEscolhido = splitInfo[1];
+//           const horario = horarioBotao.textContent;
     
-          localStorage.setItem('sala', salaEscolhida);
-          localStorage.setItem('tipoAudio', audioEscolhido);
-          localStorage.setItem('filme', nomeFilme);
-          localStorage.setItem('dia', dia);
-          localStorage.setItem('horario', horario);
+//           localStorage.setItem('sala', salaEscolhida);
+//           localStorage.setItem('tipoAudio', audioEscolhido);
+//           localStorage.setItem('filme', nomeFilme);
+//           localStorage.setItem('dia', dia);
+//           localStorage.setItem('horario', horario);
     
-          window.location.href = '../../pages/escolherIngresso/escolherIngresso.php';
-        }else{
-          window.location.href = '../../pages/login/login.html';
-        }
-      }
+//           window.location.href = '../../pages/escolherIngresso/escolherIngresso.php';
+//         }else{
+//           window.location.href = '../../pages/login/login.html';
+//         }
+//       }
 
