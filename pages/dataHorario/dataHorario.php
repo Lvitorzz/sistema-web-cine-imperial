@@ -56,7 +56,7 @@ if (isset($_GET['id'])) {
 
             </div>
             <div class="info-cinema">
-                <h1>Cine Vila Geek - Alagoinhas</h1>
+                <h1>Ingressos Plus</h1>
             </div>
 
             <div class="horario-container" id="horario-container">
@@ -64,8 +64,8 @@ if (isset($_GET['id'])) {
                     <h2>Dublado</h2>
                     <?php foreach ($sessoes as $sessao) : ?>
                         <?php if ($sessao->getAudio() == 'dublado') : ?>
-                            <a href="../escolherIngresso/escolherIngresso.php?id_sessao=<?php echo $sessao->getIdSessao(); ?>" class="sessao-link">
-                                <button class="sessao-button">
+                            <a class="sessao-button" href="../escolherIngresso/escolherIngresso.php?id_sessao=<?php echo $sessao->getIdSessao(); ?>" class="sessao-link">
+                                <button style="background-color: #120F26; border: none; color: white;">
                                     <span>
                                         <?php
                                         $dataSessao = new DateTime($sessao->getDia());
