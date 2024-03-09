@@ -3,55 +3,55 @@ const urlParams = new URLSearchParams(queryString);
 const filme = urlParams.get('titulo');
 const idFilme = urlParams.get('id')
 
-async function listarSessoesDB(idFilme) {
-  try {
-    const response = await fetch('listarSessoes.php');
+// async function listarSessoesDB(idFilme) {
+//   try {
+//     const response = await fetch('listarSessoes.php');
 
-    if (!response.ok) {
-      throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`);
-    }
+//     if (!response.ok) {
+//       throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`);
+//     }
 
-    const text = await response.text();
-    const sessoes = JSON.parse(text);
+//     const text = await response.text();
+//     const sessoes = JSON.parse(text);
 
-    const horarioContainer = document.getElementById('horario-container');
+//     const horarioContainer = document.getElementById('horario-container');
 
-    const sessoesDoFilme = sessoes.filter(sessao => sessao.idFilme === idFilme);
+//     const sessoesDoFilme = sessoes.filter(sessao => sessao.idFilme === idFilme);
 
-    // sessoesDoFilme.forEach(sessao => {
-    //   if (sessao.dia && typeof sessao.dia === 'string' && sessao.horario && typeof sessao.horario === 'string') {
-    //     const dataFormatada = sessao.dia.split(' ')[0];
-    //     const dataSessao = new Date(dataFormatada);
+//     // sessoesDoFilme.forEach(sessao => {
+//     //   if (sessao.dia && typeof sessao.dia === 'string' && sessao.horario && typeof sessao.horario === 'string') {
+//     //     const dataFormatada = sessao.dia.split(' ')[0];
+//     //     const dataSessao = new Date(dataFormatada);
 
-    //     if (!isNaN(dataSessao.getTime())) {
-    //       const diaSemana = dataSessao.toLocaleDateString('pt-BR', { weekday: 'short' });
-    //       const horariosSessao = sessao.horario.split(',').map(horario => horario.trim());
+//     //     if (!isNaN(dataSessao.getTime())) {
+//     //       const diaSemana = dataSessao.toLocaleDateString('pt-BR', { weekday: 'short' });
+//     //       const horariosSessao = sessao.horario.split(',').map(horario => horario.trim());
 
-    //       const button = document.createElement('button');
-    //       button.textContent = `Data da sessão: ${dataSessao.toLocaleDateString()} - Dia da semana: ${diaSemana} - Horários: ${horariosSessao.join(', ')}`;
+//     //       const button = document.createElement('button');
+//     //       button.textContent = `Data da sessão: ${dataSessao.toLocaleDateString()} - Dia da semana: ${diaSemana} - Horários: ${horariosSessao.join(', ')}`;
 
-    //       horarioContainer.appendChild(button);
+//     //       horarioContainer.appendChild(button);
 
-    //       button.addEventListener('click', () => {
-    //         escolherHorario(sessao);
-    //         console.log('Botão clicado:', sessao);
-    //       });
+//     //       button.addEventListener('click', () => {
+//     //         escolherHorario(sessao);
+//     //         console.log('Botão clicado:', sessao);
+//     //       });
 
-    //     } else {
-    //       console.error(`Formato de data inválido: ${sessao.data}`);
-    //     }
-    //   } else {
-    //     console.error(`Propriedades 'data' ou 'horario' ausentes ou não são strings: ${JSON.stringify(sessao)}`);
-    //   }
-    // });
+//     //     } else {
+//     //       console.error(`Formato de data inválido: ${sessao.data}`);
+//     //     }
+//     //   } else {
+//     //     console.error(`Propriedades 'data' ou 'horario' ausentes ou não são strings: ${JSON.stringify(sessao)}`);
+//     //   }
+//     // });
 
-  } catch (error) {
-    console.error('Erro ao processar resposta:', error);
-  }
-}
+//   } catch (error) {
+//     console.error('Erro ao processar resposta:', error);
+//   }
+// }
 
 
-listarSessoesDB(idFilme);
+// listarSessoesDB(idFilme);
 
 let nomeFilme = '';
 async function getMovieInfo(filme) {
@@ -84,10 +84,10 @@ getMovieInfo(filme);
 document.addEventListener("DOMContentLoaded", function () {
   const trailerBotao = document.getElementById("trailer-btn");
   trailerBotao.addEventListener("click", function () {
-    searchAndEmbedTrailer(filme);
+    exibirTrailer(filme);
   });
 
-  async function searchAndEmbedTrailer(filme) {
+  async function exibirTrailer(filme) {
     const response = await fetch(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${filme} trailer&key=AIzaSyBiqHWgvNikzG8mdBUUhEB8CI8Fsq9hLao`
     );

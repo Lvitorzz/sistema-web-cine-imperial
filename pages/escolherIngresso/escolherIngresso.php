@@ -1,12 +1,25 @@
 <?php
-    session_start();
-    if (!isset($_SESSION['usuario'])) {
-        header("Location: ../../pages/home/home.php");
-        exit();
-    } 
+require_once("../../controllers/sessaoController.php");
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    header("Location: ../../pages/home/home.php");
+    exit();
+}
+
+if (isset($_GET['id_sessao'])) {
+    $idSessao = $_GET['id_sessao'];
+
+    $sessaoController = new SessaoController();
+    $sessao = $sessaoController->listarSessaoPorId($idSessao);
+} else {
+
+    header("Location: ../../pages/home/home.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,26 +27,27 @@
     <link rel="stylesheet" href="../../css/padrao.css">
     <link rel="stylesheet" href="escolherIngresso.css">
 </head>
+
 <body>
     <section class="escolher-ingressos">
         <div class="texto-escolher-ingresso">
             <h1>ESCOLHER INGRESSOS</h1>
         </div>
-    </section>  
+    </section>
 
     <div class="container-escolher-ingressos">
         <section class="escolher-ingressos-info-filme">
             <div class="escolher-ingressos-poster-filme" id="poster">
-    
+
             </div>
             <div class="escolher-detalhes-ingresso">
-                <h2 id="filme-nome"></h2>
-                <p id="dia-escolhido"> </p>
-                <p id="horario-escolhido"></p>
-                <p id="sala-escolhida"></p>
-                <p id="audio-escolhido"></p>
+                <h2 id="filme-nome"><?php echo $sessao->getNomeFilme(); ?></h2>
+                <p id="dia-escolhido"><?php echo $sessao->getDia(); ?></p>
+                <p id="horario-escolhido"><?php echo $sessao->getHorario(); ?></p>
+                <p id="sala-escolhida"><?php echo $sessao->getNumeroSala(); ?></p>
+                <p id="audio-escolhido"><?php echo $sessao->getAudio(); ?></p>
             </div>
-            
+
             <div class="escolher-ingressos-endereco">
                 <div class="escolher-ingressos-endereco-texto">
                     <h2>CinemaPenas - Catu/BA</h2>
@@ -44,10 +58,10 @@
                 </div>
             </div>
         </section>
-    
+
         <section class="container-tipo-ingresso">
             <h1>Selecione o tipo e a quantidade de ingresso</h1>
-        
+
             <table>
                 <thead>
                     <tr>
@@ -119,8 +133,9 @@
                         <td>Pacote Família
                             <div class="tooltip">
                                 ?
-                                
-                            </div><div class="tooltip-text">Combo de 4 Ingressos por R$20,00 cada.</div>
+
+                            </div>
+                            <div class="tooltip-text">Combo de 4 Ingressos por R$20,00 cada.</div>
                         </td>
                         <td>R$60,00</td>
                         <td>
@@ -136,8 +151,9 @@
                         <td>Duplo Ingresso
                             <div class="tooltip-dupla">
                                 ?
-                                
-                            </div><div class="tooltip-text-dupla">2 Ingressos com preço de 1.</div>
+
+                            </div>
+                            <div class="tooltip-text-dupla">2 Ingressos com preço de 1.</div>
                         </td>
                         <td>R$29.00</td>
                         <td>
@@ -153,7 +169,7 @@
                     </tr>
                 </tbody>
             </table>
-            
+
             <div class="info-valores">
                 <div class="container-quant-ingressos">
                     <h1 class="txt-quant">Total de Ingressos</h1>
@@ -164,7 +180,7 @@
                     <h1 class="valor-pagar" id="valor-pagar">R$0,00</h1>
                 </div>
             </div>
-            
+
         </section>
 
         <section class="container-confirma-ingresso">
@@ -174,12 +190,12 @@
                 <div class="div-continuar">
                     <h3 class="preco-final" id="preco-final">Total: R$00,00</h3>
                     <button id="continuar-btn" class="botao-confirmar-compra">Continuar</button>
-                </div> 
+                </div>
             </div>
         </section>
     </div>
-    
-    
+
+
     <footer>
         <div class="imagem-full-width">
             <img src="../../imgs/Baixe.png" alt="Imagem de largura total">
@@ -222,8 +238,14 @@
             <p>&copy; 2023 CineImperial. Todos os direitos reservados.</p>
         </div>
     </footer>
-    
 
+    <script>
+        function js() {
+            let filmeP = '<?php echo $sessao->getNomeFilme(); ?>';
+            jsFilme(filmeP);
+        }
+    </script>
     <script src="ingressos.js"></script>
 </body>
+
 </html>

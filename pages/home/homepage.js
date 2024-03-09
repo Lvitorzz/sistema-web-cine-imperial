@@ -1,6 +1,6 @@
 async function getMovieInfoFromDB(tipo) {
   try {
-    const response = await fetch('pages/home/listarFilmes.php');
+    const response = await fetch('listarFilmes.php');
 
     if (!response.ok) {
       throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`);

@@ -1,16 +1,24 @@
-const filmeNome = localStorage.getItem('filme');
-const diaEscolhido = localStorage.getItem('dia');
-const horarioEscolhido = localStorage.getItem('horario');
-const salaEscolhida = localStorage.getItem('sala');
-const audioEscolhido = localStorage.getItem('tipoAudio')
+// const filmeNome = localStorage.getItem('filme');
+// const diaEscolhido = localStorage.getItem('dia');
+// const horarioEscolhido = localStorage.getItem('horario');
+// const salaEscolhida = localStorage.getItem('sala');
+// const audioEscolhido = localStorage.getItem('tipoAudio');
 
-const filmeNomeElement = document.getElementById('filme-nome');
-const diaEscolhidoElement = document.getElementById('dia-escolhido');
-const horarioEscolhidoElement = document.getElementById('horario-escolhido');
-const salaEscolhidaElement = document.getElementById('sala-escolhida');
-const audioEscolhidoElement = document.getElementById('audio-escolhido');
+// const filmeNomeElement = document.getElementById('filme-nome');
+// const diaEscolhidoElement = document.getElementById('dia-escolhido');
+// const horarioEscolhidoElement = document.getElementById('horario-escolhido');
+// const salaEscolhidaElement = document.getElementById('sala-escolhida');
+// const audioEscolhidoElement = document.getElementById('audio-escolhido');
+document.addEventListener('DOMContentLoaded', function () {
+  js();
+});
+let filme = '';
+function jsFilme(filmeP) {
+  filme = filmeP;
+  getMovieInfo(filme);
+}
 
-let filme = `${filmeNome}`;
+
 async function getMovieInfo(filme) {
   const response = await fetch(
     `http://www.omdbapi.com/?t=${filme}&apikey=e182b070`
@@ -21,42 +29,41 @@ async function getMovieInfo(filme) {
 
   nomeFilme = data.Title;
 }
-getMovieInfo(filme);
 
-function diaCompleto(diaEscolhido) {
-  const diasDaSemana = {
-    'Seg': 'Segunda-feira',
-    'Ter': 'Terça-feira',
-    'Qua': 'Quarta-feira',
-    'Qui': 'Quinta-feira',
-    'Sex': 'Sexta-feira',
-    'Sáb': 'Sábado',
-    'Dom': 'Domingo'
-  };
+// function diaCompleto(diaEscolhido) {
+//   const diasDaSemana = {
+//     'Seg': 'Segunda-feira',
+//     'Ter': 'Terça-feira',
+//     'Qua': 'Quarta-feira',
+//     'Qui': 'Quinta-feira',
+//     'Sex': 'Sexta-feira',
+//     'Sáb': 'Sábado',
+//     'Dom': 'Domingo'
+//   };
 
-  if (diaEscolhido in diasDaSemana) {
-    return diasDaSemana[diaEscolhido];
-  } else {
-    return 'Dia inválido';
-  }
-}
+//   if (diaEscolhido in diasDaSemana) {
+//     return diasDaSemana[diaEscolhido];
+//   } else {
+//     return 'Dia inválido';
+//   }
+// }
 
-function dataDia(str) {
-  const partes = str.split(' ');
+// function dataDia(str) {
+//   const partes = str.split(' ');
 
-  const data = `${partes[1]}/${new Date().getFullYear()}`;
+//   const data = `${partes[1]}/${new Date().getFullYear()}`;
 
-  return data;
-}
+//   return data;
+// }
 
-const nomeDia = diaCompleto(diaEscolhido.substring(0, 3));
-const data = dataDia(diaEscolhido);
+// const nomeDia = diaCompleto(diaEscolhido.substring(0, 3));
+// const data = dataDia(diaEscolhido);
 
-filmeNomeElement.textContent = `${filmeNome}`;
-diaEscolhidoElement.textContent = `Data: ${data} - ${nomeDia}`;
-horarioEscolhidoElement.textContent = `Horário: ${horarioEscolhido}`;
-salaEscolhidaElement.textContent = `Sala: 0${salaEscolhida}`;
-audioEscolhidoElement.textContent = `Sessão: ${audioEscolhido}`;
+// filmeNomeElement.textContent = `${filmeNome}`;
+// diaEscolhidoElement.textContent = `Data: ${data} - ${nomeDia}`;
+// horarioEscolhidoElement.textContent = `Horário: ${horarioEscolhido}`;
+// salaEscolhidaElement.textContent = `Sala: 0${salaEscolhida}`;
+// audioEscolhidoElement.textContent = `Sessão: ${audioEscolhido}`;
 
 
 
@@ -114,33 +121,33 @@ document.addEventListener('DOMContentLoaded', function () {
       input.addEventListener('input', calcularTotais);
   });
 
-  document.getElementById('continuar-btn').addEventListener('click', criarTicket);
+  // document.getElementById('continuar-btn').addEventListener('click', criarTicket);
 });
 
-function criarTicket() {
-  var filme = filmeNome;
-  var sala = salaEscolhida;
-  var audio = audioEscolhido;
-  var data = diaEscolhido;
-  var horario = horarioEscolhido;
-  var quantidadeIngressos = document.getElementById('quant-ingressos').textContent;
-  var valorTotal = document.getElementById('valor-pagar').textContent;
+// function criarTicket() {
+//   var filme = filmeNome;
+//   var sala = salaEscolhida;
+//   var audio = audioEscolhido;
+//   var data = diaEscolhido;
+//   var horario = horarioEscolhido;
+//   var quantidadeIngressos = document.getElementById('quant-ingressos').textContent;
+//   var valorTotal = document.getElementById('valor-pagar').textContent;
 
-  var ticket = {
-      filme: filme,
-      sala: sala,
-      audio: audio,
-      data: data,
-      horario: horario,
-      quantidadeIngressos: quantidadeIngressos,
-      valorTotal: valorTotal
-  };
-  localStorage.setItem('ticket', JSON.stringify(ticket));
-  if (quantidadeIngressos > 0){
-    window.location.href = '../../pages/pagamento/pagamento.html';
-  } else{
-    alert('Selecione pelo menos um ingresso!')
-  }
+//   var ticket = {
+//       filme: filme,
+//       sala: sala,
+//       audio: audio,
+//       data: data,
+//       horario: horario,
+//       quantidadeIngressos: quantidadeIngressos,
+//       valorTotal: valorTotal
+//   };
+//   localStorage.setItem('ticket', JSON.stringify(ticket));
+//   if (quantidadeIngressos > 0){
+//     window.location.href = '../../pages/pagamento/pagamento.html';
+//   } else{
+//     alert('Selecione pelo menos um ingresso!')
+//   }
   
-}
+// }
 

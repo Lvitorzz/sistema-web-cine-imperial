@@ -8,6 +8,8 @@ class SessaoModel
     private $dia;
     private $horario;
     private $audio;
+    private $nomeFilme;
+    private $numeroSala;
 
     public function __construct($idSessao, $idFilme, $idSala, $dia, $horario, $audio)
     {
@@ -47,6 +49,26 @@ class SessaoModel
     public function getAudio()
     {
         return $this->audio;
+    }
+
+    public function setNomeFilme($nomeFilme)
+    {
+        $this->nomeFilme = $nomeFilme;
+    }
+
+    public function getNomeFilme()
+    {
+        return $this->nomeFilme;
+    }
+
+    public function setNumeroSala($numeroSala)
+    {
+        $this->numeroSala = $numeroSala;
+    }
+
+    public function getNumeroSala()
+    {
+        return $this->numeroSala;
     }
     
 }

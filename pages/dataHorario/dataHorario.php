@@ -64,9 +64,10 @@ if (isset($_GET['id'])) {
                     <h2>Dublado</h2>
                     <?php foreach ($sessoes as $sessao) : ?>
                         <?php if ($sessao->getAudio() == 'dublado') : ?>
-                            <button class="sessao-button">
-                                <span>
-                                    <?php
+                            <a href="../escolherIngresso/escolherIngresso.php?id_sessao=<?php echo $sessao->getIdSessao(); ?>" class="sessao-link">
+                                <button class="sessao-button">
+                                    <span>
+                                        <?php
                                         $dataSessao = new DateTime($sessao->getDia());
                                         $nomeDia = [
                                             'Sunday' => 'Domingo',
@@ -79,10 +80,11 @@ if (isset($_GET['id'])) {
                                         ];
 
                                         echo $dataSessao->format('d/m') . ' - ' . $nomeDia[$dataSessao->format('l')];
-                                    ?>
-                                </span>
-                                <span><?php echo substr($sessao->getHorario(), 0, 5); ?></span>
-                            </button>
+                                        ?>
+                                    </span>
+                                    <span><?php echo substr($sessao->getHorario(), 0, 5); ?></span>
+                                </button>
+                            </a>
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </div>
@@ -94,18 +96,18 @@ if (isset($_GET['id'])) {
                             <button class="sessao-button">
                                 <span>
                                     <?php
-                                        $dataSessao = new DateTime($sessao->getDia());
-                                        $nomeDia = [
-                                            'Sunday' => 'Domingo',
-                                            'Monday' => 'Segunda-feira',
-                                            'Tuesday' => 'Terça-feira',
-                                            'Wednesday' => 'Quarta-feira',
-                                            'Thursday' => 'Quinta-feira',
-                                            'Friday' => 'Sexta-feira',
-                                            'Saturday' => 'Sábado'
-                                        ];
+                                    $dataSessao = new DateTime($sessao->getDia());
+                                    $nomeDia = [
+                                        'Sunday' => 'Domingo',
+                                        'Monday' => 'Segunda-feira',
+                                        'Tuesday' => 'Terça-feira',
+                                        'Wednesday' => 'Quarta-feira',
+                                        'Thursday' => 'Quinta-feira',
+                                        'Friday' => 'Sexta-feira',
+                                        'Saturday' => 'Sábado'
+                                    ];
 
-                                        echo $dataSessao->format('d/m') . ' - ' . $nomeDia[$dataSessao->format('l')];
+                                    echo $dataSessao->format('d/m') . ' - ' . $nomeDia[$dataSessao->format('l')];
                                     ?>
                                 </span>
                                 <span><?php echo substr($sessao->getHorario(), 0, 5); ?></span>
