@@ -61,7 +61,12 @@ if (isset($_GET['id_sessao'])) {
 
         <section class="container-tipo-ingresso">
             <h1>Selecione o tipo e a quantidade de ingresso</h1>
-
+            <form action="gerarIngresso.php" method="post">
+                <input type="number" name="idFilme" hidden value="<?php echo $sessao->getIdFilme(); ?>">
+                <input type="number" name="idSala" hidden value="<?php echo $sessao->getIdSala(); ?>">
+                <input type="number" name="idSessao" hidden value="<?php echo $sessao->getIdSessao(); ?>">
+                <input type="number" name="idCliente" hidden value="<?php echo $_SESSION['usuario']['id']; ?>">
+                <input type="number" name="valor" hidden value="29">
             <table>
                 <thead>
                     <tr>
@@ -76,7 +81,7 @@ if (isset($_GET['id_sessao'])) {
                         <td>Inteira</td>
                         <td>R$29,00</td>
                         <td>
-                            <select onchange="calcularTotais()">
+                            <select name="quantidade" onchange="calcularTotais()">
                                 <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -92,10 +97,12 @@ if (isset($_GET['id_sessao'])) {
                         <td>R$0.00</td>
                     </tr>
                     <tr>
+                        <h4 style="text-align: center;">No momento so é possivel comprar Ingresso do tipo 'Inteira'</h4>
+                        <h6 style="text-align: center;">Estamos trabalhando para fornecer melhores opções no futuro. :)</h6>
                         <td>Meia</td>
                         <td>R$14,50</td>
                         <td>
-                            <select onchange="calcularTotais()">
+                            <select onchange="calcularTotais()" disabled>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -114,7 +121,7 @@ if (isset($_GET['id_sessao'])) {
                         <td>Criança</td>
                         <td>R$14,50</td>
                         <td>
-                            <select onchange="calcularTotais()">
+                            <select onchange="calcularTotais()" disabled>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -139,7 +146,7 @@ if (isset($_GET['id_sessao'])) {
                         </td>
                         <td>R$60,00</td>
                         <td>
-                            <select onchange="calcularTotais('pacoteFamilia')">
+                            <select onchange="calcularTotais('pacoteFamilia')" disabled>
                                 <option value="0">0</option>
                                 <option value="1">1 Pacote (Total de de 4 Ingresso)</option>
                                 <option value="2">2 Pacotes (Total de 8 Ingresso)</option>
@@ -157,7 +164,7 @@ if (isset($_GET['id_sessao'])) {
                         </td>
                         <td>R$29.00</td>
                         <td>
-                            <select onchange="calcularTotais('duplaPagaMeia')">
+                            <select onchange="calcularTotais('duplaPagaMeia')" disabled>
                                 <option value="0">0</option>
                                 <option value="1">1 (Total de 2 Ingressos)</option>
                                 <option value="2">2 (Total de 4 Ingressos)</option>
@@ -169,6 +176,9 @@ if (isset($_GET['id_sessao'])) {
                     </tr>
                 </tbody>
             </table>
+            <input style="background-color: greenyellow; width: 200px; height: 50px; border: none; cursor: pointer;" type="submit" value="Comprar">
+            </form>
+            
 
             <div class="info-valores">
                 <div class="container-quant-ingressos">
@@ -189,7 +199,7 @@ if (isset($_GET['id_sessao'])) {
                 <p class="detalhes-compra" id="detalhes-compra"></p>
                 <div class="div-continuar">
                     <h3 class="preco-final" id="preco-final">Total: R$00,00</h3>
-                    <button id="continuar-btn" class="botao-confirmar-compra">Continuar</button>
+                    <button id="continuar-btn" class="botao-confirmar-compra" disabled>Continuar</button>
                 </div>
             </div>
         </section>

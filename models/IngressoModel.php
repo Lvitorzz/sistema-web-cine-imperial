@@ -3,18 +3,22 @@
 class IngressoModel
 {
     private $idIngresso;
-    private $idFilme;
-    private $idSala;
-    private $idSessao;
-    private $valor;
+    private $nomeFilme;
+    private $numeroSala;
+    private $tipoAudio;
+    private $nomeCliente;
+    private $dataSessao;
+    private $horarioSessao;
 
-    public function __construct($idIngresso, $idFilme, $idSala, $idSessao, $valor)
+    public function __construct($idIngresso, $nomeFilme, $numeroSala, $tipoAudio, $nomeCliente, $dataSessao, $horarioSessao)
     {
         $this->idIngresso = $idIngresso;
-        $this->idFilme = $idFilme;
-        $this->idSala = $idSala;
-        $this->idSessao = $idSessao;
-        $this->valor = $valor;
+        $this->nomeFilme = $nomeFilme;
+        $this->numeroSala = $numeroSala;
+        $this->tipoAudio = $tipoAudio;
+        $this->nomeCliente = $nomeCliente;
+        $this->dataSessao = $dataSessao;
+        $this->horarioSessao = $horarioSessao;
     }
 
     public function getIdIngresso()
@@ -22,24 +26,34 @@ class IngressoModel
         return $this->idIngresso;
     }
 
-    public function getIdFilme()
+    public function getNomeFilme()
     {
-        return $this->idFilme;
+        return $this->nomeFilme;
     }
 
-    public function getIdSala()
+    public function getNumeroSala()
     {
-        return $this->idSala;
+        return $this->numeroSala;
     }
 
-    public function getIdSessao()
+    public function getTipoAudio()
     {
-        return $this->idSessao;
+        return $this->tipoAudio;
     }
 
-    public function getValor()
+    public function getNomeCliente()
     {
-        return $this->valor;
+        return $this->nomeCliente;
+    }
+
+    public function getDataSessao()
+    {
+        return $this->dataSessao;
+    }
+
+    public function getHorarioSessao()
+    {
+        return $this->horarioSessao;
     }
 }
 ?>
