@@ -1,107 +1,51 @@
 body{
     background-color: #120F26;
-}
-
-.card-pagamento-header{
-    height: 120px;
-    background-color: #18213B;
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    border-radius: 0 0 25px 25px;
-    box-shadow: 1px 2px 20px black;
     color: white;
 }
 
-.card-pagamento-header h1{
-    text-align: center;
-    font-size: 2.6em;
-    margin-top: 20px;
-}
-
-.card-pagamento-header .fase{
-    display: flex;
-    margin: auto;
-}
-
-.card-pagamento-header .etapa-atual {
-    background-color: #4CAF50;
-    color: white;
-    font-weight: bold;
-}
-
-.card-pagamento-header .fase div{
-    padding: 5px;
-    border: 1px solid white;
-    font-size: 0.7em;
-    font-weight: bold;
-    color: white;
-}
-
-.card-pagamento .metodo-pagamento {
-    margin-bottom: 20px;
-}
-
-.metodo-pagamento label{
-    margin-left: 20px;
-    font-size: 1em;
-    font-weight: bold;
-}
-
-.pagar-ingressos{
-    display: flex;
-    justify-content: center;
-    margin: 30px;
-}
-
-.detalhes-filme-pagamento{
-    background-color: white;
-    color: black;
-    width: 600px;
-    height: 400px;
-    border-radius: 5px;
-}
-
-.detalhes-filme-pagamento h3{
-    margin-top: 10px;
-    font-size: 1em;
+.txt-a{
+    margin: 65px;
     text-align: center;
 }
 
-.detalhes-filme-pagamento p {
-    white-space: pre-line;
-    margin-bottom: 10px;
-    margin-left: 20px;
-}
-
-.selecionar-metodo-pagamento{
-    border: 1px solid black;
-    height: 30px;
-    border-radius: 5px;
-    padding: 5px;
-}
-
-.container-pagar-btn {
-    margin-top: 55px;
-    display: flex;
-    justify-content: center;
-}
-
-.pagar-btn{
-    width: 200px;
-    height: 50px;
-    background-color: #4CAF50;
-    border: none;
+a {
+    text-align: center;
+    background-color: #27498C;
     color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    box-shadow: 1px 2px 7px black;
+    padding: 20px;
+    width: max-content;
+    border-radius: 8px;
+    margin: 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
 }
 
-.pagar-btn:hover {
-    background-color: #45a049;
+a:hover {
+    background-color: #1A356E;
+}
+
+.btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 20%;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #27498C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1A356E;
 }

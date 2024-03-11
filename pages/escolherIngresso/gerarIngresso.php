@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($resultado) {
         echo "Ingresso!";
-        header("Location: ../home/home.php");
+        header("Location: ../pagamento/pagamento.php");
         exit();
     } else {
         echo "Erro ao cadastrar ingresso.";

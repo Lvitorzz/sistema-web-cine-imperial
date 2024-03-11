@@ -176,8 +176,9 @@ if (isset($_GET['id_sessao'])) {
                     </tr>
                 </tbody>
             </table>
-            <input style="background-color: greenyellow; width: 200px; height: 50px; border: none; cursor: pointer;" type="submit" value="Comprar">
+            <input style="background-color: #4CAF50; color: white;  width: 200px; height: 50px; border: none; cursor: pointer;" type="submit" value="Comprar">
             </form>
+            
             
 
             <div class="info-valores">
@@ -198,8 +199,8 @@ if (isset($_GET['id_sessao'])) {
                 <h2>Detalhes da compra</h2>
                 <p class="detalhes-compra" id="detalhes-compra"></p>
                 <div class="div-continuar">
-                    <h3 class="preco-final" id="preco-final">Total: R$00,00</h3>
-                    <button id="continuar-btn" class="botao-confirmar-compra" disabled>Continuar</button>
+                    <!-- <h3 class="preco-final" id="preco-final">Total: R$00,00</h3>
+                    <button id="continuar-btn" class="botao-confirmar-compra" disabled>Continuar</button> -->
                 </div>
             </div>
         </section>

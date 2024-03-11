@@ -16,36 +16,37 @@ class IngressoController
     public function createIngresso($idFilme, $idSala, $idSessao, $idCliente, $quantidade, $valorUnitario)
     {
         $valorTotal = $quantidade * $valorUnitario;
-    
+
         $sql = "INSERT INTO ingressos (idFilme, idSala, idSessao, idCliente, quantidade, valorUnitario, valorTotal) 
                 VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("iiidddd", $idFilme, $idSala, $idSessao, $idCliente, $quantidade, $valorUnitario, $valorTotal);
-    
+
         return $stmt->execute();
     }
 
     public function ingressosPorCliente($idCliente)
     {
         $sql = "
-            SELECT
-                i.idIngresso,
-                f.nome AS nomeFilme,
-                s.numero_sala AS numeroSala,
-                se.tipo_audio AS tipoAudio,
-                u.nome AS nomeCliente,
-                se.data_hora AS dataSessao,
-                se.horario AS horarioSessao
-            FROM
-                Ingressos i
-                JOIN Filmes f ON i.idFilme = f.id_filme
-                JOIN Salas s ON i.idSala = s.id_sala
-                JOIN Sessoes se ON i.idSessao = se.id_sessao
-                JOIN Usuarios u ON i.idCliente = u.id_usuario
-            WHERE
-                i.idCliente = ?;
-        ";
+        SELECT
+            i.idIngresso,
+            f.nomeFilme AS nomeFilme,
+            s.numeroSala AS numeroSala,
+            se.audio AS tipoAudio,
+            u.nome AS nomeCliente,
+            se.dia AS dataSessao,
+            se.horario AS horarioSessao,
+            i.quantidade,
+            i.valorTotal
+        FROM
+            ingressos i
+            JOIN filmes_cartaz f ON i.idFilme = f.idFilme
+            JOIN salas s ON i.idSala = s.idSala
+            JOIN sessao se ON i.idSessao = se.idSessao
+            JOIN clientes u ON i.idCliente = u.id
+        WHERE
+            i.idCliente = ?;";
 
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("i", $idCliente);
@@ -63,7 +64,9 @@ class IngressoController
                     $row['tipoAudio'],
                     $row['nomeCliente'],
                     $row['dataSessao'],
-                    $row['horarioSessao']
+                    $row['horarioSessao'],
+                    $row['quantidade'],
+                    $row['valorTotal']
                 );
                 $ingressos[] = $ingresso;
             }

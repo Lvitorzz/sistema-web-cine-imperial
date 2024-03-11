@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciar Perfil</title>
     <link rel="stylesheet" href="gerenciarUsuario.css">
+    <link rel="stylesheet" href="../../css/padrao.css">
 </head>
 
 <body>
@@ -70,6 +71,7 @@
             }
         }
     ?>
+        <button onclick="window.location.href='../home/home.php'">Voltar à tela inicial</button>
         <h2>Editar Perfil</h2>
         <form action="gerenciarUsuario.php" method="post">
             <label for="nome">Nome:</label>
