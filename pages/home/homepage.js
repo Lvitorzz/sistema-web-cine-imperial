@@ -1,6 +1,6 @@
-async function getMovieInfoFromDB(tipo) {
+async function filmesBD(tipo) {
   try {
-    const response = await fetch('listarFilmes.php');
+    const response = await fetch('listarFilmes.php', { mode: 'no-cors' });
 
     if (!response.ok) {
       throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`);
@@ -13,13 +13,13 @@ async function getMovieInfoFromDB(tipo) {
       return tipo === 'cartaz' ? filme.tipo === 'Cartaz' : filme.tipo === 'Breve';
     });
 
-    displayMovies(filteredFilmes);
+    mostrarFilmes(filteredFilmes);
   } catch (error) {
     console.error('Erro ao processar resposta:', error);
   }
 }
 
-async function displayMovies(filmes) {
+async function mostrarFilmes(filmes) {
   const filmeContainer = document.getElementById("filmeContainer");
   filmeContainer.innerHTML = '';
 
@@ -52,15 +52,15 @@ async function displayMovies(filmes) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  getMovieInfoFromDB('cartaz');
+  filmesBD('cartaz');
 });
 
 document.getElementById("cartaz").addEventListener("click", function () {
-  getMovieInfoFromDB('cartaz');
+  filmesBD('cartaz');
 });
 
 document.getElementById("breve").addEventListener("click", function () {
-  getMovieInfoFromDB('breve');
+  filmesBD('breve');
 });
 
 
