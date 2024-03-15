@@ -28,7 +28,7 @@
                         echo '<button onclick="toggleMenu()"></button>';
                         echo '<div id="opcoes-menu">';
                         echo '<a href="../../pages/usuario/gerenciarUsuario.php">Gerenciar Perfil</a>';
-                        echo '<a href="#">Minhas Compras</a>';
+                        echo '<a href="../../pages/usuario/meusingressos.php">Minhas Compras</a>';
                         if ($_SESSION['usuario']['email'] === 'admin@admin.com') {
                             echo '<a href="../../pages_admin/admin/admin.html">Gerenciar Cinema</a>';
                         }

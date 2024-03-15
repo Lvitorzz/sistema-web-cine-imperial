@@ -8,11 +8,10 @@ $filmesBreve = $filmeController->listarFilmesBreve();
 
 if (isset($_GET['excluir_id'])) {
     $idExcluir = $_GET['excluir_id'];
-    $tipoFilme = $_GET['tipo_filme']; // Adicione isso para obter o tipo do filme
+    $tipoFilme = $_GET['tipo_filme'];
 
     $exclusaoSucesso = false;
 
-    // Verifica o tipo do filme e chama o método correspondente
     if ($tipoFilme === 'cartaz') {
         $exclusaoSucesso = $filmeController->excluirFilmeCartaz($idExcluir);
     } elseif ($tipoFilme === 'breve') {
