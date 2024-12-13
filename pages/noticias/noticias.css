@@ -1,0 +1,106 @@
+body{
+    background-color: #120F26;
+}
+
+#banner-noticias {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+#scrollbar {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    user-select: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-slide {
+    flex: 1 0 0%;
+    height: 100%;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section {
+    padding-top: 40px;
+    max-width: 800px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.noticia {
+    width: 48%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    background-color: #111111;
+    border: 4px solid #111111;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.noticia-titulo {
+    padding: 10px;
+    text-align: start;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffffb1;
+}
+
+.noticia img {
+    width: 100%;
+    height: auto;
+}
+
+.acessar-noticia {
+    display: none;
+    color: #fff;
+    padding: 10px;
+}
+
+.noticia img:hover ~ .noticia-titulo {
+    display: none;
+}
+
+.noticia img:hover ~ .acessar-noticia {
+    display: block;
+}
+
+.section-noticia {
+    background-color: #282828;
+    padding: 0px 40px 0px 40px;
+}

@@ -1,0 +1,67 @@
+body {
+    background-color: #120F26;
+    color: white;
+}
+
+form {
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #27498C;
+    border-radius: 5px;
+    background-color: #120F26;
+    color: white;
+}
+
+button {
+    cursor: pointer;
+    background-color: #27498C;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1A356E;
+}
+
+h2 {
+    color: white;
+    margin-top: 30px;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    color: red;
+    margin-bottom: 20px;
+}
+
+.btn-deletar{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-deletar button {
+    width: 25%;
+    cursor: pointer;
+    background-color: #27498C;
+    transition: background-color 0.3s ease;
+}
+
+.btn-deletar button:hover {
+    background-color: red;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,178 @@
+body{
+    background-color: #120F26;
+}
+
+.header {
+    color: white;
+    text-align: center;
+    
+}
+
+#filmeContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.filmeCard {
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    color: white;
+}
+
+.filmeCard:hover {
+    transform: translateY(-3px);
+}
+
+.filmeCard h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.filmeCard img {
+    max-width: 100%;
+    height: auto;
+}
+
+.headnav nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.txt-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headnav img{
+    height: 105px;
+    width: 105px;
+}
+
+.headnav a {
+    text-decoration: none;
+    color: white;
+}
+
+.div-logo {
+    width: 100%;
+    font-family: 'Honk', system-ui;
+}
+
+#menu-usuario {
+    display: flex;
+    align-items: center;
+}
+
+#nome-usuario {
+    margin-right: 10px;
+}
+
+#opcoes-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#opcoes-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+#opcoes-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.btn-nav button{
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.select ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    background-color: #27498C;
+    padding: 10px;
+}
+
+.select a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+
+.select li {
+    margin: 0 10px;
+}
+
+.select button {
+    background-color: #27498C;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 600px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.select button:hover{
+    background-color: #1a356e;
+    transform: translateY(-3px);
+}
+
+.banner{
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner img {
+    height: 200px;
+}
+
+.select2 ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    background-color: #27498C;
+    padding: 10px;
+}
+
+.select2 li {
+    margin: 0 10px;
+}

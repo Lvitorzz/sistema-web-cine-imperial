@@ -1,0 +1,184 @@
+body{
+    background-color: #120F26;
+}
+
+.container-data-horario hr{
+    margin-top: 50px;
+    border: 1px solid black;
+}
+
+.container-data-horario {
+    display: flex;
+}
+  
+.container-data-horario .filme {
+    flex: 40%;
+    height: 100vh;
+    color: white;
+}
+
+.container-data-horario .filme h1{
+
+    text-align: center;
+    margin-bottom: 25px;
+}
+  
+.container-data-horario .data-horario {
+    flex: 60%;
+
+    height: 100vh;
+    color: white;
+}
+
+.container-data-horario .info-filme{
+    display: block;
+    justify-content: center;
+}
+
+.container-data-horario .info-filme img{
+    height: 300px;
+    margin-right: 30px;
+}
+
+.container-data-horario .info-filme button{
+    width: 200px;
+    height: 40px;
+    margin-top: 15px;
+    border-radius: 7px;
+    border: none;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.container-data-horario .info-filme button:hover{
+    background-color: rgb(196, 196, 196);
+}
+
+.container-data-horario .btn-info{
+    margin-top: 20px;
+}
+
+.container-data-horario .infos h3{
+    margin-top: 5px;
+}
+
+.container-data-horario .infos{
+    display: flex;
+}
+
+.container-data{
+    width: 700px;
+    margin-left: 25px;
+}
+
+.container-data .dia-btn{
+    background-color: white;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    text-align: center;
+    width: 80px;
+    cursor: pointer;
+}
+
+.container-data .dia-btn:hover{
+    background-color: rgb(196, 196, 196);
+}
+
+.container-data{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-data-horario .info-cinema h1{
+    margin-top: 30px;
+    font-size: 1em;
+    margin-left: 40px;
+}
+
+.container-data-horario h1{
+    margin-top: 30px;
+    font-size: 2em;
+    margin-left: 40px;
+}
+
+.info-filme .poster img{
+    margin-left: 25px;
+    border-radius: 15px;
+}
+
+.info-filme .detalhes h2{
+    font-weight: 500;
+}
+
+.dia-btn.selecionado {
+    background-color: #27498C;
+    color: white;
+}
+
+.container-data-horario .horario-container{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    margin: auto;
+    margin-top: 10px;
+    margin-left: 40px;
+    height: 500px;
+    width: 500px;
+    border-radius: 15px;
+}
+
+.container-data-horario .horario-container h2{
+    margin-left: 25px;
+    margin-top: 35px;
+}
+
+.horario-btn {
+    margin-left: 25px;
+    margin-top: 8px;
+    background-color: #27498C;
+    font-weight: bold;
+    font-size: 1em;
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+
+.sessao-audio {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sessao-button {
+    background-color: #120F26;
+    width: 50%;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out;
+    text-align: center;
+}
+
+.sessao-button span {
+    display: block;
+    font-size: 16px;
+}
+
+.sessao-button:hover {
+    background-color: #05040a;
+}
